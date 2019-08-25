@@ -14,8 +14,9 @@
     <div class="nav-wrapper">
       <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
-        <li><a href="#" onclick="return false" class="link-how-it-works">How it works</a></li>
-        <li><a href="">Sign In</a></li>
+        <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
+        <li><a href="{% url 'signUp' %}">Sign Up</a></li>
+        <li><a href="#">Log In</a> </li>
       </ul>
     </div>
   </nav>
