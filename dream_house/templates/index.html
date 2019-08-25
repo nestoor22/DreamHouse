@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamHomePrice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
+        <li><a href="#" onclick="return false" class="link-how-it-works">How it works</a></li>
+        <li><a href="">Sign In</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="header-logo-block">
+        <img class="header-logo" src="../static/images/background.png" alt="">
+  </div>
+  <div class="row">
+    <h1 style="color: #999999; text-align: center;">Two possibilities</h1>
+    <div class="col s12 m6" style="background-color: black; margin-bottom: 40px">
+      <div class="card">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0">
+          <span class="card-title">Personal</span>
+          <p>You are searching apartments or house of your dream ? Do you you want to know how much it will be cost ?
+          You can use this simple service to check the price of your dream. Just write parameters and get the price !</p>
+          <div class="card-action">
+            <a href="#">Try now</a>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m6" style="background-color: black;margin: 0">
+      <div class="card">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+          <span class="card-title">Business</span>
+          <p> If you are interested in ceiling apartments or house, it's for you. With our service you can see all
+          proposals in different places. We provide a lot of information so you can analyze it and choose the best price
+            for your case !</p>
+          <div class="card-action">
+            <a href="#">Try now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h1 style="color: #999999; text-align: center" class="h1-how-it-works">How it works</h1>
+    <div class="col s12 m3" style="background-color: black;margin: 0">
+      <div class="card">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+          <span class="card-title">STEP 1</span>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3" style="background-color: black;margin: 0">
+      <div class="card">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+          <span class="card-title">STEP 2</span>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3" style="background-color: black;margin: 0">
+      <div class="card">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+          <span class="card-title">STEP 3</span>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m3" style="background-color: black;margin: 0">
+      <div class="card">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+          <span class="card-title">STEP 4</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<script type="text/javascript">
+$('.link-how-it-works').click(function(){
+       $('html, body').animate({scrollTop:$('.h1-how-it-works').position().top}, 2000);
+});
+</script>
+</body>
+</html>
