@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register   |</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+</head>
+<body>
+
+<script>
+	$(document).ready(function(){
+ 		$('.sidenav').sidenav();
+ 	});
+</script>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+			<i class="material-icons">menu</i>
+		  </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
+        <li><a href="{%url 'main'%}" class="link-how-it-works">How it works</a></li>
+        <li><a href="{% url 'signUp' %}">Sign Up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<ul id="mobile-nav" class="sidenav" style="margin-right: 25px">
+  <li><a href="{%url 'main'%}" class="link-how-it-works">How it works</a></li>
+  <li><a href="{% url 'signUp' %}">Sign Up</a></li>
+</ul>
+  <div class="row">
+    <form class="col s12" id="register">
+      <div class="row" style="margin-left: 35%; margin-top: 10%; width: 25%; margin-bottom: 0">
+        <p style="color: white; text-align: center"><a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+        <br>OR</p>
+      </div>
+      <div class="row" style="margin-left: 35%; width: 50%">
+        <div class="input-field col s3">
+          <input placeholder="First Name" id="first_name" type="text" class="validate" style="text-align: center;color: white">
+        </div>
+        <div class="input-field col s3">
+          <input placeholder="Last Name" id="last_name" type="text" class="validate" style="text-align: center;color: white;">
+        </div>
+      </div>
+      <div class="row" style="margin-left: 35%; width: 50%;">
+        <div class="input-field col s3" style="text-align: center;color: white">
+          <input placeholder="Email" id="email" type="email" class="validate" style="text-align: center;color: white">
+        </div>
+        <div class="input-field col s3">
+          <input placeholder="Password" id="password" type="password" class="validate" style="text-align: center;color: white">
+        </div>
+      </div>
+      <div class="row" style="margin-left: 35%; width: 50%;">
+        <div class="input-field col s3" style="text-align: center;color: white;">
+          <button class="btn waves-effect waves-light" type="submit" form="register" name="action" value="Submit">
+                Submit<i class="material-icons right">send</i>
+          </button>
+      </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

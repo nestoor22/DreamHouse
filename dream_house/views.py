@@ -16,3 +16,7 @@ def sign_in(request):
 def logout_view(request):
     logout(request)
     return redirect(index)
+
+
+def log_in_view(request):
+    return render(request, 'logIn.html')
