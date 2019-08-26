@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from dream_house import views
+from dream_house.views import sign_in, index
+from django.conf.urls import url, include
+from django.contrib import admin
+from django.contrib.auth import views
 
 urlpatterns = [
-    path('signUp/', views.sign_in, name='signUp'),
-    path('', views.index, name='main'),
+    path('signUp/', sign_in, name='signUp'),
+    path(r'auth/', include('social_django.urls', namespace='social')),
+    path('', index, name='main'),
     path('admin/', admin.site.urls),
 ]
