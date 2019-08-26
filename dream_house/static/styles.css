@@ -7,6 +7,16 @@ body{
     margin-left: 25px;
 }
 
+.sidenav{
+    background-color: #16243c;
+}
+
+#menu{
+    display: block;
+    height: 30px;
+    margin:  10px
+}
+
 
 .nav-wrapper {
     background-color: #16243c;

@@ -37,25 +37,27 @@
   <li><a href="{% url 'signUp' %}">Sign Up</a></li>
 </ul>
   <div class="row">
-    <form class="col s12" id="register">
+    <form class="col s12" id="register" action="{% url 'createUser' %}" method="post">
+      {% csrf_token %}
       <div class="row" style="margin-left: 35%; margin-top: 10%; width: 25%; margin-bottom: 0">
-        <p style="color: white; text-align: center"><a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a><br>
+        <p style="color: white; text-align: center">{{ message }}<br><a href="{% url 'social:begin' 'google-oauth2' %}">
+          Login with Google</a><br>
         <br>OR</p>
       </div>
       <div class="row" style="margin-left: 35%; width: 50%">
         <div class="input-field col s3">
-          <input placeholder="First Name" id="first_name" type="text" class="validate" style="text-align: center;color: white">
+          <input placeholder="First Name" name="first_name" type="text" class="validate" style="text-align: center;color: white">
         </div>
         <div class="input-field col s3">
-          <input placeholder="Last Name" id="last_name" type="text" class="validate" style="text-align: center;color: white;">
+          <input placeholder="Last Name" name="last_name" type="text" class="validate" style="text-align: center;color: white;">
         </div>
       </div>
       <div class="row" style="margin-left: 35%; width: 50%;">
         <div class="input-field col s3" style="text-align: center;color: white">
-          <input placeholder="Email" id="email" type="email" class="validate" style="text-align: center;color: white">
+          <input placeholder="Email" name="email" type="email" class="validate" style="text-align: center;color: white">
         </div>
         <div class="input-field col s3">
-          <input placeholder="Password" id="password" type="password" class="validate" style="text-align: center;color: white">
+          <input placeholder="Password" name="password" type="password" class="validate" style="text-align: center;color: white">
         </div>
       </div>
       <div class="row" style="margin-left: 35%; width: 50%;">

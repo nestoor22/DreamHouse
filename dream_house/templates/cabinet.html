@@ -7,23 +7,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../static/styles.css">
-    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".load_home").click(function() {
+            $.get("/user_parameters/", function(data) {
+                $("#loaded_content").html(data);
+            });
+        });
+    });
+</script>
+
   <nav>
     <div class="nav-wrapper">
       <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
+    <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+			<i class="material-icons">menu</i>
+		</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
-        <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
+        <li><a href="{%url 'main'%}" class="link-how-it-works">How it works</a></li>
           {% if user.is_authenticated %}
-            <li><a href="#">{{ user.username }}</a></li>
-            <li><a href="{% url 'logOut' %}">Log Out</a></li>
+            <li><a href="{% url 'cabinet' %}">My profile</a> </li>
+            <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
           {% else %}
             <li><a href="{% url 'signUp' %}">Sign Up</a></li>
-            <li><a href="#">Log In</a> </li>
+            <li><a href="{% url 'logIn' %}">Log In</a> </li>
           {% endif %}
       </ul>
     </div>
   </nav>
+  <ul id="mobile-nav" class="sidenav">
+        <li><a href="{%url 'main'%}" style="color: white" class="link-how-it-works">How it works</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="#" style="color: white">My profile</a> </li>
+            <li><a href="{% url 'logOut' %}" style="color: white"> Log Out</a> </li>
+          {% else %}
+            <li><a href="{% url 'signUp' %}" style="color: white">Sign Up</a></li>
+            <li><a href="{% url 'logIn' %}" style="color: white">Log In</a> </li>
+          {% endif %}
+  </ul>
+  <div class="row">
+    <div class="col s12 m2" style="margin: 0;padding: 0; background-color: #16243c">
+      <h5 style="color: white; text-align: center">{{ user.first_name }}</h5>
+      <div class="card z-depth-0" style="background-color: #16243c;">
+        <div class="card-action" style="padding: 10px;">
+          <a href="#" id="menu" onclick="return false" class="load_home">This is a link<br></a>
+          <a href="#" id="menu">This is a link</a>
+        </div>
+        </div>
+      </div>
+    <div class="col s12 m10" id="loaded_content" style="margin: 0;padding: 10px; background-color: white">
+    </div>
+    </div>
 </body>
 </html>

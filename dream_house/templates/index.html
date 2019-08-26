@@ -28,7 +28,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
         <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
           {% if user.is_authenticated %}
-            <li><a href="#">{{ user.username }}</a> </li>
+            <li><a href="{% url 'cabinet' %}">My profile</a> </li>
             <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
           {% else %}
             <li><a href="{% url 'signUp' %}">Sign Up</a></li>
@@ -51,7 +51,7 @@
         <img class="header-logo" src="../static/images/background.png" alt="">
   </div>
   <div class="row">
-    <h1 style="color: white; text-align: center;">Two possibilities</h1>
+    <h1 class="center-align" style="color: white">Two possibilities</h1>
     <div class="col s12 m6" style="background-color: black; margin-bottom: 40px">
       <div class="card">
         <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0">
@@ -59,7 +59,7 @@
           <p>You are searching apartments or house of your dream ? Do you you want to know how much it will be cost ?
           You can use this simple service to check the price of your dream. Just write parameters and get the price !</p>
           <div class="card-action">
-            <a href="#">Try now</a>
+            <a href="{% url 'signUp' %}">Try now</a>
             <a href="#">Read more</a>
           </div>
         </div>
@@ -80,32 +80,37 @@
     </div>
   </div>
   <div class="row">
-    <h1 style="color: white; text-align: center" class="h1-how-it-works">How it works</h1>
+    <h1 style="color: white;" class="center-align h1-how-it-works">How it works</h1>
     <div class="col s12 m3" style="background-color: black;margin: 0">
       <div class="card">
-        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0; height: 200px">
           <span class="card-title">STEP 1</span>
+          <p> Create free account manually or with Google or Facebook accounts. </p>
         </div>
       </div>
     </div>
     <div class="col s12 m3" style="background-color: black;margin: 0">
       <div class="card">
-        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0; height: 200px">
           <span class="card-title">STEP 2</span>
+          <p>Go to your account page and click button Find new dream</p>
         </div>
       </div>
     </div>
     <div class="col s12 m3" style="background-color: black;margin: 0">
       <div class="card">
-        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0; height: 200px">
           <span class="card-title">STEP 3</span>
+          <p>Fill all data. Choose what you want to know (price, distance to center, area) Our algorithm will search the best result which
+          will fit your input parameters.</p>
         </div>
       </div>
     </div>
     <div class="col s12 m3" style="background-color: black;margin: 0">
       <div class="card">
-        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">
+        <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;height: 200px">
           <span class="card-title">STEP 4</span>
+          <p>Wait a minute and look at results !</p>
         </div>
       </div>
     </div>
