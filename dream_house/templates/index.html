@@ -6,7 +6,7 @@
     <title>DreamHomePrice</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/styles.css">
     <script src="../static/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
@@ -15,9 +15,9 @@
       <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
         <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
-          {% if not user.is_authenticated %}
-{#            <li><a href="{% url 'signUp' %}">Sign Up</a></li>#}
+          {% if user.is_authenticated %}
             <li><a href="#">{{ user.username }}</a> </li>
+            <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
           {% else %}
             <li><a href="{% url 'signUp' %}">Sign Up</a></li>
             <li><a href="#">Log In</a> </li>
@@ -29,7 +29,7 @@
         <img class="header-logo" src="../static/images/background.png" alt="">
   </div>
   <div class="row">
-    <h1 style="color: #999999; text-align: center;">Two possibilities</h1>
+    <h1 style="color: white; text-align: center;">Two possibilities</h1>
     <div class="col s12 m6" style="background-color: black; margin-bottom: 40px">
       <div class="card">
         <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0">
@@ -58,7 +58,7 @@
     </div>
   </div>
   <div class="row">
-    <h1 style="color: #999999; text-align: center" class="h1-how-it-works">How it works</h1>
+    <h1 style="color: white; text-align: center" class="h1-how-it-works">How it works</h1>
     <div class="col s12 m3" style="background-color: black;margin: 0">
       <div class="card">
         <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0;">

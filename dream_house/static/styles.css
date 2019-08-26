@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    background-color: black;
+}
+
+.brand-logo {
+    margin-left: 25px;
+}
+
+
+.nav-wrapper {
+    background-color: #16243c;
+    margin: 0;
+}
+
+.header-logo{
+    width: 100%;
+}
+
+.card-title{
+    text-align: center;
+}
+.card{
+    border-radius: 5px;
+}
+
+.dropdown-content{
+   width: max-content !important;
+   height:auto !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #16243c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: orange;
+}
