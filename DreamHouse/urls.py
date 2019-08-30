@@ -24,7 +24,6 @@ from django.contrib.auth import views
 urlpatterns = [
     path(r'activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
          activate_account, name='activation'),
-
     path('confirm_email/', confirm_email, name='confirm_email'),
     path('user_parameters/', user_parameters, name='giveParam'),
     path('cabinet/', user_room, name='cabinet'),

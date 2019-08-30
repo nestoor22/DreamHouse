@@ -54,3 +54,12 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background: orange;
 }
+
+.fa{
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+#how_it_works_cards {
+    background-color: black;
+    margin: 0;
+}
