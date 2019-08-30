@@ -50,17 +50,38 @@
           {% endif %}
   </ul>
   <div class="row">
-    <div class="col s12 m2" style="margin: 0;padding: 0; background-color: #16243c">
+    <div class="col s12 m2" style="margin: 0;padding: 0; background-color: #16243c;border-bottom-right-radius: 3px">
       <h5 style="color: white; text-align: center">{{ user.first_name }}</h5>
       <div class="card z-depth-0" style="background-color: #16243c;">
-        <div class="card-action" style="padding: 10px;">
-          <a href="#" id="menu" onclick="return false" class="load_home">This is a link<br></a>
-          <a href="#" id="menu">This is a link</a>
+        <div class="card-action" style="padding: 10px; border-radius: 3px">
+          <a href="#" id="menu" onclick="return false" class="load_home">Information<br></a>
+          <a href="#" id="menu">Previous results</a>
+          <a href="#" id="menu">Subscribes</a>
+          <a href="#" id="menu">Settings</a>
         </div>
         </div>
       </div>
-    <div class="col s12 m10" id="loaded_content" style="margin: 0;padding: 10px; background-color: white">
+    <div class="col s12 m10" id="loaded_content" style="padding: 10px;">
+      <div class="container" style="background-color: #16243c; color:white;padding: 10px">
+        <div class="row">
+          <div class="col s2"><h6>First name:</h6></div>
+          <div class="col s4"><h6>{{ user.first_name }}</h6></div>
+          <div class="col s2"><h6>Last name:</h6></div>
+          <div class="col s4"><h6>{{ user.last_name }}</h6></div>
+        </div>
+        <div class="row">
+          <div class="col s2"><h6>Email:</h6></div>
+          <div class="col s4"><h6>{{ user.email }}</h6></div>
+          <div class="col s2"><h6>Account:</h6></div>
+          <div class="col s4"><h6>Basic</h6></div>
+        </div>
+
+        <div class="row">
+          <div class='col s4 offset-s4' style="text-align: center"><a href="#">
+            <h5>Find new dream</h5></a></div>
+        </div>
+      </div>
     </div>
-    </div>
+  </div>
 </body>
 </html>
