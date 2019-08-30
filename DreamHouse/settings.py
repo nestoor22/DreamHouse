@@ -131,6 +131,14 @@ LOGIN_REDIRECT_URL = 'main'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '161410404293-jsujdo415on8am842nchl344venk0ukc.apps.googleusercontent.com'  #Paste CLient Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'DbtTtwN7MBDwnru7JI5toqUZ'
 
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PASSWORD = 'Slavko-Nestor04062001' #my gmail password
+EMAIL_HOST_USER = 'yaroslav.nestor22@gmail.com' #my gmail username
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 

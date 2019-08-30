@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from dream_house.views import sign_in, index, logout_view, log_in_page, register_user, user_log_in, user_room,\
-    user_parameters
+    user_parameters, confirm_email, activate_account
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views
 
 urlpatterns = [
+    path(r'activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
+         activate_account, name='activation'),
+
+    path('confirm_email/', confirm_email, name='confirm_email'),
     path('user_parameters/', user_parameters, name='giveParam'),
     path('cabinet/', user_room, name='cabinet'),
     path('admission/', user_log_in, name='UserLogIn'),
