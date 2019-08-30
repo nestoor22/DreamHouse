@@ -134,8 +134,9 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'DbtTtwN7MBDwnru7JI5toqUZ'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'Slavko-Nestor04062001' #my gmail password
-EMAIL_HOST_USER = 'yaroslav.nestor22@gmail.com' #my gmail username
+
+EMAIL_HOST_PASSWORD = ''    #  your gmail password
+EMAIL_HOST_USER = ''   # your gmail username
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
