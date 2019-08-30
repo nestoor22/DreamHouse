@@ -54,7 +54,7 @@
       <h5 style="color: white; text-align: center">{{ user.first_name }}</h5>
       <div class="card z-depth-0" style="background-color: #16243c;">
         <div class="card-action" style="padding: 10px; border-radius: 3px">
-          <a href="#" id="menu" onclick="return false" class="load_home">Information<br></a>
+          <a href="" id="menu" onclick="return false" class="load_home">Information<br></a>
           <a href="#" id="menu">Previous results</a>
           <a href="#" id="menu">Subscribes</a>
           <a href="#" id="menu">Settings</a>
@@ -66,7 +66,7 @@
         {% if user.profile.profile_type == 'Not active'%}
           <div class="row">
             <div class="col s8 offset-s2" style="text-align: center;">
-              <h6>{{ error }}</h6>
+              <h6>{{ message }}</h6>
             </div>
           </div>
           <div class="row">

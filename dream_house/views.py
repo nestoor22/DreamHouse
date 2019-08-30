@@ -39,7 +39,6 @@ def user_room(request):
     return render(request, 'cabinet.html')
 
 
-
 def user_parameters(request):
     return render(request, 'profile_info.html')
 
@@ -49,15 +48,17 @@ def register_user(request):
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
+        username = email.split('@')[0]
         password = request.POST.get('password')
         if not check_user_not_exist(email):
             return render(request, 'signUp.html', {'message': 'This email is already token'})
 
-        user = User.objects.create_user(username=email, email=email, password=password, first_name=first_name,
+        user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name,
                                         last_name=last_name)
-        new_profile = Profile.objects.create(user=user, location="L'viv")
+        new_profile = Profile.objects.create(user=user, location="L'viv", profile_type='Active')
         new_profile.save()
-        new_user = authenticate(request, username=email, password=password)
+
+        new_user = authenticate(request, username=username, password=password)
         if new_user:
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
         return redirect(index)
@@ -67,7 +68,7 @@ def user_log_in(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(request, username=email, password=password)
+        user = authenticate(request, username=email.split('@')[0], password=password)
 
         if user is not None:
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
@@ -88,10 +89,10 @@ def confirm_email(request):
         'token': account_activation_token.make_token(user),
     })
 
-    # send_mail('TEST DJANGO', 'TEST PASSED', settings.EMAIL_HOST_USER,
-    #           ['nestorslavko45@gmail.com'], fail_silently=False)
+    send_mail('DreamHouse confirm email', message, settings.EMAIL_HOST_USER,
+              ['nestorslavko45@gmail.com'], fail_silently=False)
 
-    return HttpResponse(message)
+    return render(request, 'cabinet.html', {'message': 'Email message is sended'})
 
 
 def activate_account(request, uidb64, token):
@@ -102,8 +103,9 @@ def activate_account(request, uidb64, token):
         user = None
 
     if user is not None and account_activation_token.check_token(user, token):
-        user.profile.profile_type = 'Active'
-        user.save()
-        return redirect('index')
+        user_profile = Profile.objects.get(user=user)
+        user_profile.profile_type = 'Active'
+        user_profile.save()
+        return redirect(index)
     else:
         return render(request, 'cabinet.html')

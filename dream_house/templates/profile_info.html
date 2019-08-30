@@ -2,6 +2,11 @@
   {% if user.profile.profile_type == 'Not active' %}
   <div class="row">
     <div class="col s8 offset-s2" style="text-align: center;">
+      <h6>{{ message }}</h6>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s8 offset-s2" style="text-align: center;">
       <h6>Please, confirm your email:       <a href="{% url 'confirm_email' %}">Confirm now</a></h6>
     </div>
   </div>
