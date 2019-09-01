@@ -13,8 +13,15 @@
 <body>
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".load_home").click(function() {
+        $(".load_user_info").click(function() {
             $.get("/user_parameters/", function(data) {
+                $("#loaded_content").html(data);
+            });
+        });
+    });
+    $(document).ready(function () {
+        $(".load_user_subscribes").click(function() {
+            $.get("/user_subscribes/", function(data) {
                 $("#loaded_content").html(data);
             });
         });
@@ -50,18 +57,20 @@
           {% endif %}
   </ul>
   <div class="row">
-    <div class="col s12 m2" style="margin: 0;padding: 0; background-color: #16243c;border-bottom-right-radius: 3px">
+    <div class="col s12 m3" style="margin: 0;padding: 0; background-color: #16243c;border-bottom-right-radius: 3px">
       <h5 style="color: white; text-align: center">{{ user.first_name }}</h5>
       <div class="card z-depth-0" style="background-color: #16243c;">
-        <div class="card-action" style="padding: 10px; border-radius: 3px">
-          <a href="" id="menu" onclick="return false" class="load_home">Information<br></a>
-          <a href="#" id="menu">Previous results</a>
-          <a href="#" id="menu">Subscribes</a>
-          <a href="#" id="menu">Settings</a>
-        </div>
+        <div class="card-action" style="border-radius: 3px;">
+          <ul class="collection" style="border: none">
+            <li class="collection-item" style="background-color: #16243c;"><a href="" id="menu" onclick="return false" class="load_user_info">Information</a></li>
+            <li class="collection-item" style="background-color: #16243c;"><a href="" id="menu">Previous results</a></li>
+            <li class="collection-item" style="background-color: #16243c;"><a href="" id="menu" onclick="return false" class="load_user_subscribes">Subscribes</a></li>
+            <li class="collection-item" style="background-color: #16243c;"><a href="#" id="menu">Settings</a></li>
+          </ul>
         </div>
       </div>
-    <div class="col s12 m10" id="loaded_content" style="padding: 10px;">
+    </div>
+    <div class="col s12 m9" id="loaded_content" style="padding: 10px;">
       <div class="container" style="background-color: #16243c; color:white;padding: 10px; border-radius: 5px">
         {% if user.profile.profile_type == 'Not active'%}
           <div class="row">

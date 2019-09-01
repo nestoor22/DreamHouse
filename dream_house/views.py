@@ -43,6 +43,10 @@ def user_parameters(request):
     return render(request, 'profile_info.html')
 
 
+def user_subscribes(request):
+    return render(request, 'subscribes_page.html')
+
+
 def register_user(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')

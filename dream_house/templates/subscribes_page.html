@@ -1,0 +1,56 @@
+<div class="container" style="width: 95%">
+  <div class="col s12 m4">
+    <div class="card" style="background-color: darkred">
+      <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0; height: 450px">
+        {% if user.profile.account_type == 'Basic'%}
+          <span class="card-title" style="color: green">Basic<i style="margin-left: 15px" class="material-icons">check</i></span>
+        {% else %}
+          <span class="card-title">Basic</span>
+        {% endif %}
+        <ul class="collection" style="border: none">
+          <li class="collection-item" style="background-color: #16243c;">Find new possibility</li>
+          <li class="collection-item" style="background-color: #16243c;">Get weekly emails</li>
+          <li class="collection-item" style="background-color: #16243c;">5 searches in day</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0; height: 450px">
+        {% if user.profile.account_type == 'Premium'%}
+          <span class="card-title" style="color: green">Premium<i style="margin-left: 15px" class="material-icons">check</i></span>
+        {% else %}
+          <span class="card-title">Premium</span>
+        {% endif %}
+        <ul class="collection" style="border: none">
+          <li class="collection-item" style="background-color: #16243c;">Find new possibility</li>
+          <li class="collection-item" style="background-color: #16243c;">Get weekly emails</li>
+          <li class="collection-item" style="background-color: #16243c;">Get daily emails</li>
+          <li class="collection-item" style="background-color: #16243c;">Get information about builders company</li>
+          <li class="collection-item" style="background-color: #16243c;">Can use feature which automatically search similar
+                                                                          proposals as prediction </li>
+          <li class="collection-item" style="background-color: #16243c;">unlimited searches in day</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-content white-text" style="background-color: #16243c; border-radius:3px; margin: 0; height: 450px">
+        {% if user.profile.account_type == 'Business' %}
+          <span class="card-title" style="color: green">Business<i style="margin-left: 15px" class="material-icons">check</i></span>
+        {% else %}
+          <span class="card-title">Business</span>
+        {% endif %}
+        <ul class="collection" style="border: none">
+          <li class="collection-item" style="background-color: #16243c;">All users possibilities</li>
+          <li class="collection-item" style="background-color: #16243c;">Add your advertisement to our emails</li>
+          <li class="collection-item" style="background-color: #16243c;">Access to data about users searches</li>
+          <li class="collection-item" style="background-color: #16243c;">Access to analytics database</li>
+          <li class="collection-item" style="background-color: #16243c;">Graphs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

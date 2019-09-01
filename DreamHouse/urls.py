@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from dream_house.views import sign_in, index, logout_view, log_in_page, register_user, user_log_in, user_room,\
-    user_parameters, confirm_email, activate_account
+    user_parameters, confirm_email, activate_account, user_subscribes
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views
@@ -26,6 +26,7 @@ urlpatterns = [
          activate_account, name='activation'),
     path('confirm_email/', confirm_email, name='confirm_email'),
     path('user_parameters/', user_parameters, name='giveParam'),
+    path('user_subscribes/', user_subscribes, name='giveSubscribes'),
     path('cabinet/', user_room, name='cabinet'),
     path('admission/', user_log_in, name='UserLogIn'),
     path('register/', register_user, name='createUser'),
