@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+import dream_house
 from django.urls import path
 from dream_house.views import sign_in, index, logout_view, log_in_page, register_user, user_log_in, user_room,\
     user_parameters, confirm_email, activate_account, user_subscribes
@@ -27,6 +28,7 @@ urlpatterns = [
     path('confirm_email/', confirm_email, name='confirm_email'),
     path('user_parameters/', user_parameters, name='giveParam'),
     path('user_subscribes/', user_subscribes, name='giveSubscribes'),
+    path('user_settings/', dream_house.views.user_settings, name='giveSetting'),
     path('cabinet/', user_room, name='cabinet'),
     path('admission/', user_log_in, name='UserLogIn'),
     path('register/', register_user, name='createUser'),

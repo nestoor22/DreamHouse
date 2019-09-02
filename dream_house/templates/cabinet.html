@@ -26,6 +26,15 @@
             });
         });
     });
+
+        $(document).ready(function () {
+        $(".load_user_settings").click(function() {
+            $.get("/user_settings/", function(data) {
+                $("#loaded_content").html(data);
+            });
+        });
+    });
+
 </script>
 
   <nav>
@@ -65,13 +74,13 @@
             <li class="collection-item" style="background-color: #16243c;"><a href="" id="menu" onclick="return false" class="load_user_info">Information</a></li>
             <li class="collection-item" style="background-color: #16243c;"><a href="" id="menu">Previous results</a></li>
             <li class="collection-item" style="background-color: #16243c;"><a href="" id="menu" onclick="return false" class="load_user_subscribes">Subscribes</a></li>
-            <li class="collection-item" style="background-color: #16243c;"><a href="#" id="menu">Settings</a></li>
+            <li class="collection-item" style="background-color: #16243c;"><a href="" id="menu" onclick="return false" class="load_user_settings">Settings</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col s12 m9" id="loaded_content" style="padding: 10px;">
-      <div class="container" style="background-color: #16243c; color:white;padding: 10px; border-radius: 5px">
+      <div class="container" style="background-color: #16243c; color:white;padding: 10px; width: 90%; border-radius: 5px">
         {% if user.profile.profile_type == 'Not active'%}
           <div class="row">
             <div class="col s8 offset-s2" style="text-align: center;">
@@ -84,13 +93,13 @@
             </div>
           </div>
         {% endif %}
-        <div class="row">
+        <div class="row" style="margin-left: 50px">
           <div class="col s2"><h6>First name:</h6></div>
           <div class="col s4"><h6>{{ user.first_name }}</h6></div>
           <div class="col s2"><h6>Last name:</h6></div>
           <div class="col s4"><h6>{{ user.last_name }}</h6></div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-left: 50px">
           <div class="col s2"><h6>Email:</h6></div>
           <div class="col s4"><h6>{{ user.email }}</h6></div>
           <div class="col s2"><h6>Account:</h6></div>

@@ -47,6 +47,10 @@ def user_subscribes(request):
     return render(request, 'subscribes_page.html')
 
 
+def user_settings(request):
+    return render(request, 'user_settings.html')
+
+
 def register_user(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
@@ -59,7 +63,7 @@ def register_user(request):
 
         user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name,
                                         last_name=last_name)
-        new_profile = Profile.objects.create(user=user, location="L'viv", profile_type='Active')
+        new_profile = Profile.objects.create(user=user, location="L'viv", profile_type='Not active')
         new_profile.save()
 
         new_user = authenticate(request, username=username, password=password)
