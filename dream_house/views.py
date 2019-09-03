@@ -102,7 +102,7 @@ def update_user_settings(request):
 
     request.user.save()
     request.user.profile.save()
-    redirect(user_room)
+    return redirect(user_room)
 
 
 def confirm_email(request):
