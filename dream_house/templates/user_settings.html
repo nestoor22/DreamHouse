@@ -1,7 +1,7 @@
 <script type="text/javascript">
       $(document).ready(function () {
         $(".change_user_settings").click(function() {
-            $.get("/change_user_settings/", function(data) {
+            $.get("/change_user_settings_page/", function(data) {
                 $("#loaded_content").html(data);
             });
         });

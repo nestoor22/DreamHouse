@@ -92,6 +92,19 @@ def user_log_in(request):
             return render(request, 'logIn.html', {'message': 'Incorrect password'})
 
 
+def update_user_settings(request):
+    if request.method == 'POST':
+        request.user.first_name = request.POST.get('first_name')
+        request.user.last_name = request.POST.get('last_name')
+        request.user.email = request.POST.get('email')
+        request.user.profile.location = request.POST.get('user_location')
+        request.user.profile.birth_date = request.POST.get('user_birth_date')
+
+    request.user.save()
+    request.user.profile.save()
+    redirect(user_room)
+
+
 def confirm_email(request):
     user = request.user
     message = render_to_string('account_activation_email.html', {

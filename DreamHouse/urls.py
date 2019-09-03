@@ -17,7 +17,7 @@ from django.contrib import admin
 import dream_house
 from django.urls import path
 from dream_house.views import sign_in, index, logout_view, log_in_page, register_user, user_log_in, user_room,\
-    user_parameters, confirm_email, activate_account, user_subscribes, change_user_setting
+    user_parameters, confirm_email, activate_account, user_subscribes, change_user_setting, update_user_settings
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views
@@ -27,7 +27,8 @@ urlpatterns = [
     path(r'activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
          activate_account, name='activation'),
     path('confirm_email/', confirm_email, name='confirm_email'),
-    path('change_user_settings/', change_user_setting),
+    path('update_user_settings/', update_user_settings, name='changeUserSettings'),
+    path('change_user_settings_page/', change_user_setting),
     path('user_parameters/', user_parameters),
     path('user_subscribes/', user_subscribes),
     path('user_settings/', dream_house.views.user_settings),
@@ -37,7 +38,10 @@ urlpatterns = [
     path('logOut/', logout_view, name='logOut'),
     path('logIn/', log_in_page, name='logIn'),
     path('signUp/', sign_in, name='signUp'),
-    path(r'auth/', include('social_django.urls', namespace='social')),
-    path('', index, name='main'),
+    path('auth/', include('social_django.urls', namespace='social')),
     path('admin/', admin.site.urls),
+    path('', index, name='main'),
 ]
+
+
+
