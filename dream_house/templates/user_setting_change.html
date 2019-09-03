@@ -1,0 +1,29 @@
+<form class="col s12" id="change_settings" action="{% url 'changeUserSettings\' %}" method="post">
+  {% csrf_token %}
+  <div class="container" style="width: 95%; color: black;border-radius: 5px">
+    <div class="row" style="margin-left: 50px">
+      <div class="col s6">
+        <ul class="collection" style="border: none">
+          <li class="collection-item"><pre>First name:    <input  value="{{ user.first_name }}" required name="first_name" type="text" class="validate"></pre></li>
+          <li class="collection-item"><pre>Email:    <input value="{{ user.email }}" required name="email" type="email" class="validate"></pre></li>
+          <li class="collection-item"><pre>Location:    <input value="{{ user.profile.location }}" required name="user_location" type="text" class="validate"></pre></li>
+        </ul>
+      </div>
+      <div class="col s6">
+        <ul class="collection" style="border: none">
+          <li class="collection-item"><pre>Last name:    <input value="{{ user.last_name }}" required name="last_name" type="text" class="validate"></pre></li>
+          <li class="collection-item"><pre>Password:    <a href="">Change password</a></pre></li>
+          <li class="collection-item"><pre>Birth date:    <input value="{{ user.profile.birth_date }}" required name="user_birth_date" type="date" class="validate"></pre></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s6" style=" margin-left:60px;color: white">
+        <button class="btn waves-effect waves-light" type="submit" form="change_settings" name="action" value="Submit">
+                  Save<i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+

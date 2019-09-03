@@ -1,4 +1,13 @@
-<div class="container" style="width: 95%; color: black;border-radius: 5px">
+<script type="text/javascript">
+      $(document).ready(function () {
+        $(".change_user_settings").click(function() {
+            $.get("/change_user_settings/", function(data) {
+                $("#loaded_content").html(data);
+            });
+        });
+    });
+</script>
+<div class="container" id="loaded_content" style="width: 95%; color: black;border-radius: 5px">
   <div class="row" style="margin-left: 50px">
     <div class="col s6">
       <ul class="collection" style="border: none">
@@ -17,12 +26,12 @@
   </div>
   <div class="row">
     <div class="col s6" style=" margin-left:60px;color: white">
-      <button class="btn waves-effect waves-light" style="background-color: darkgrey" type="submit" form="register" name="action" value="Submit">
+      <button class="btn waves-effect waves-light" style="background-color: darkgrey" type="submit" disabled form="register" name="action" value="Submit">
                 Save<i class="material-icons right">send</i>
       </button>
-      <button class="btn waves-effect waves-light" type="submit" form="register" name="action" value="Submit">
+      <a href="" onclick="return false" class="change_user_settings"><button class="btn waves-effect waves-light " type="submit" form="register" name="action" value="Submit">
                 Change
-      </button>
+      </button></a>
     </div>
   </div>
 </div>

@@ -27,14 +27,13 @@
         });
     });
 
-        $(document).ready(function () {
+      $(document).ready(function () {
         $(".load_user_settings").click(function() {
             $.get("/user_settings/", function(data) {
                 $("#loaded_content").html(data);
             });
         });
     });
-
 </script>
 
   <nav>

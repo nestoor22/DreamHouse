@@ -51,6 +51,10 @@ def user_settings(request):
     return render(request, 'user_settings.html')
 
 
+def change_user_setting(request):
+    return render(request, 'user_setting_change.html')
+
+
 def register_user(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
