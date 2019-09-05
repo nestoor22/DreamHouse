@@ -16,8 +16,7 @@ Including another URLconf
 from django.contrib import admin
 import dream_house
 from django.urls import path
-from dream_house.views import sign_in, index, logout_view, log_in_page, register_user, user_log_in, user_room,\
-    user_parameters, confirm_email, activate_account, user_subscribes, change_user_setting, update_user_settings
+from dream_house.views import *
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views
@@ -26,12 +25,13 @@ from django.contrib.auth import views
 urlpatterns = [
     path(r'activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
          activate_account, name='activation'),
+    path('find_new_dream/', find_new_dream_page, name='findNewDream'),
     path('confirm_email/', confirm_email, name='confirm_email'),
     path('update_user_settings/', update_user_settings, name='changeUserSettings'),
     path('change_user_settings_page/', change_user_setting),
     path('user_parameters/', user_parameters),
     path('user_subscribes/', user_subscribes),
-    path('user_settings/', dream_house.views.user_settings),
+    path('user_settings/', user_settings),
     path('cabinet/', user_room, name='cabinet'),
     path('admission/', user_log_in, name='UserLogIn'),
     path('register/', register_user, name='createUser'),

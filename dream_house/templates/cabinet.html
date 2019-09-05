@@ -108,7 +108,7 @@
         <div class="row">
           <div class='col s4 offset-s4' style="text-align: center">
             {% if user.profile.profile_type == 'Active' %}
-              <a href="#"><h5>Find new dream</h5></a></div>
+              <a href="{% url 'findNewDream' %}"><h5>Find new dream</h5></a></div>
             {% elif  user.profile.profile_type == 'Not active'%}
               <h5 style="color: darkgrey" title="Confirm email and activate account">Find new dream</h5>
             {% endif %}

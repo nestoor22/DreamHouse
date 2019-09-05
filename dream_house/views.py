@@ -54,6 +54,10 @@ def change_user_setting(request):
     return render(request, 'user_setting_change.html')
 
 
+def find_new_dream_page(request):
+    return render(request, 'find_new_dream_page.html')
+
+
 def register_user(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')
