@@ -16,7 +16,9 @@
 	$(document).ready(function(){
  		$('.sidenav').sidenav();
  	});
-
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
 </script>
   <nav>
     <div class="nav-wrapper">
@@ -51,7 +53,7 @@
     <div class="container" style="background-color: #16243c; width: 90%">
       <div class="col s12 m12">
         <div class="row">
-          <h5 style="text-align: center; color: white; font-size: xx-large">What do you want to know ?</h5>
+          <h3 style="text-align: center; color: white;">What do you want to know ?</h3>
         </div>
         <div class="row" style="margin-top: 40px">
           <div class="container" style="width: 90%;">
@@ -60,7 +62,7 @@
                 <li class="collection-item" id="find_new_dream_menu">Price</li></a>
               <a href="" class="predict_area" onclick="return false">
                 <li class="collection-item" id="find_new_dream_menu">Area</li></a>
-              <a href="" class="predict_distance" onclick="return false">
+              <a href="" class="predict_distance"  onclick="return false">
                 <li class="collection-item" id="find_new_dream_menu">Distance to center</li></a>
               <a href="" class="predict_rooms" onclick="return false">
                 <li class="collection-item" id="find_new_dream_menu">Count of rooms</li></a>
@@ -68,6 +70,11 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 40%">
+    <h3 style="text-align: center; color: white" >Enter parameters</h3>
+    <div class="fill_parameters">
     </div>
   </div>
 </body>
