@@ -63,3 +63,17 @@ body{
     background-color: black;
     margin: 0;
 }
+
+#find_new_dream_menu {
+    background-color: black;
+    margin: 40px;
+    font-size: x-large;
+    color: orange;
+    display: inline;
+}
+
+#find_new_dream_menu:hover{
+    color: #16243c;
+    transform-style: flat;
+    transition-duration: 0.5s;
+}
