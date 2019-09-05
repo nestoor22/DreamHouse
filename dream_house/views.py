@@ -1,6 +1,5 @@
 from .models import Profile
 from django.conf import settings
-from django.http import HttpResponse
 from django.core.mail import send_mail
 from .helpers import check_user_not_exist
 from django.contrib.auth.models import User
@@ -11,11 +10,8 @@ from django.utils.http import urlsafe_base64_encode
 from django.utils.http import urlsafe_base64_decode
 from django.template.loader import render_to_string
 from dream_house.tokens import account_activation_token
-from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.shortcuts import get_current_site
-
-#Create your views here.
 
 
 def index(request):
@@ -32,7 +28,10 @@ def logout_view(request):
 
 
 def log_in_page(request):
-    return render(request, 'logIn.html')
+    if request.user.is_authenticated:
+        return redirect(user_room)
+    else:
+        return render(request, 'logIn.html')
 
 
 def user_room(request):
