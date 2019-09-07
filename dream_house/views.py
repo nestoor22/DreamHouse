@@ -1,7 +1,6 @@
-from .models import Profile
 from django.conf import settings
-from django.core.mail import send_mail
 from .helpers import check_user_not_exist
+from .models import Profile, DataToPredict
 from django.contrib.auth.models import User
 from django.utils.encoding import force_text
 from .tasks import send_email_for_activation
@@ -13,6 +12,7 @@ from django.template.loader import render_to_string
 from dream_house.tokens import account_activation_token
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse
 
 
 def index(request):
@@ -140,3 +140,15 @@ def activate_account(request, uidb64, token):
         return redirect(index)
     else:
         return render(request, 'cabinet.html')
+
+
+def save_data_for_price_prediction(request):
+    if request.method == 'POST':
+        new_data = request.POST.dict()
+        del new_data['csrfmiddlewaretoken']
+
+        new_data_to_predict = DataToPredict.objects.create(user=request.user)
+        for field, value in new_data.items():
+            setattr(new_data_to_predict, field, value)
+
+        return HttpResponse(new_data)

@@ -1,3 +1,6 @@
+<script type="text/javascript">
+  $('[data-toggle="datepicker"]').datepicker({format: 'yyyy-mm-dd'});{}
+</script>
 <form class="col s12" id="change_settings" action="{% url 'changeUserSettings' %}" method="post">
   {% csrf_token %}
   <div class="container" style="width: 95%; color: black;border-radius: 5px">
@@ -13,7 +16,7 @@
         <ul class="collection" style="border: none">
           <li class="collection-item"><pre>Last name:    <input value="{{ user.last_name }}" required name="last_name" type="text" class="validate"></pre></li>
           <li class="collection-item"><pre>Password:    <a href="">Change password</a></pre></li>
-          <li class="collection-item"><pre>Birth date:    <input value="{{ user.profile.birth_date }}" required name="user_birth_date" type="date" class="validate"></pre></li>
+          <li class="collection-item"><pre>Birth date:    <input name="user_birth_date" data-toggle="datepicker" class="validate"></pre></li>
         </ul>
       </div>
     </div>

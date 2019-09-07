@@ -1,47 +1,48 @@
 <div class="col s12 m12 l12">
   <div class="card-panel">
     <div class="row">
-      <form class="col s12" id="predict_price" action="" method="post">
+      <form class="col s12" id="predict_price" action="{% url 'pricePrediction' %}" method="post">
+        {% csrf_token %}
         <div class="row">
           <div class="input-field col s3">
-            <input id="area" type="number" style="text-align: center">
+            <input id="area" type="number" name="area" style="text-align: center">
               <label for="area">Area</label>
             </div>
 
             <div class="input-field col s3">
-              <input id="kitchen_area" type="number">
+              <input id="kitchen_area" name="kitchen_area" type="number">
               <label for="kitchen_area">Kitchen area</label>
             </div>
             <div class="input-field col s3">
-              <input id="living_area" type="number">
+              <input id="living_area" name="living_area" type="number">
               <label for="living_area">Living area</label>
             </div>
             <div class="input-field col s3">
-              <input id="rooms" type="number">
+              <input id="rooms" name="rooms" type="number">
               <label for="rooms">Rooms</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s3">
-              <input id="floor" type="number">
+              <input id="floor" name="floor" type="number">
               <label for="floor">Floor</label>
             </div>
             <div class="input-field col s3">
-              <input id="floors" type="number">
+              <input id="floors"  name="floors" type="number">
               <label for="floors">Floors</label>
             </div>
             <div class="input-field col s3">
-              <input id="balconies" type="number">
+              <input id="balconies" name="balconies" type="number">
               <label for="balconies">Balconies</label>
             </div>
             <div class="input-field col s3">
-              <input id="ceiling" type="number">
+              <input id="ceiling" name="ceiling" type="number">
               <label for="ceiling">Ceiling</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s4 ">
-              <select class="select1">
+              <select name="condition">
                 <option value="1">Luxury</option>
                 <option value="2">Distinctive</option>
                 <option value="3">Average</option>
@@ -51,7 +52,7 @@
               <label>Select Condition</label>
             </div>
             <div class="input-field col s4">
-              <select>
+              <select name="walls_material">
                 <option value="1">Brick</option>
                 <option value="2">Ferroconcrete</option>
                 <option value="3">Block</option>
@@ -59,7 +60,7 @@
               <label>Select walls material</label>
             </div>
             <div class="input-field col s4">
-              <select>
+              <select name="building_type">
                 <option value="1">New building</option>
                 <option value="2">House</option>
               </select>
@@ -76,7 +77,7 @@
           </div>
           <div class="row" style="margin-left: 35%; width: 50%;">
             <div class="input-field col s4 offset-4" style="text-align: center;color: white;">
-              <button class="btn waves-effect waves-light" type="submit" form="predict_price" name="action" value="Submit">
+              <button class="btn waves-effect waves-light" type="submit" form="predict_price" value="Submit">
                 Submit<i class="material-icons right">send</i>
               </button>
             </div>

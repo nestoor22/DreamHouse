@@ -4,19 +4,19 @@ from django.contrib.auth.models import User
 
 class DataToPredict(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    price = models.FloatField(default=None)
-    area = models.FloatField(default=None)
-    rooms = models.IntegerField(default=None)
-    floor = models.IntegerField(default=None)
-    building_type = models.CharField(max_length=40, default=None)
-    distance_to_center = models.FloatField(default=None)
-    living_area = models.FloatField(default=None)
-    kitchen_area = models.FloatField(default=None)
-    condition = models.CharField(max_length=40, default=None)
-    walls_material = models.CharField(max_length=40, default=None)
-    balconies = models.IntegerField(default=None)
-    ceiling_height = models.FloatField(default=None)
-    floors = models.IntegerField(default=None)
+    price = models.FloatField(default=None, null=True, blank=True)
+    area = models.FloatField(default=None, null=True,  blank=True)
+    rooms = models.IntegerField(default=None, null=True, blank=True)
+    floor = models.IntegerField(default=None, null=True)
+    building_type = models.CharField(max_length=40, null=True, default=None)
+    distance_to_center = models.FloatField(default=None,null=True, blank=True)
+    living_area = models.FloatField(default=None, null=True)
+    kitchen_area = models.FloatField(default=None, null=True)
+    condition = models.CharField(max_length=40,null=True, default=None)
+    walls_material = models.CharField(max_length=40,null=True, default=None)
+    balconies = models.IntegerField(default=None, null=True)
+    ceiling_height = models.FloatField(default=None, null=True)
+    floors = models.IntegerField(default=None, null=True)
 
 
 class Profile(models.Model):
