@@ -24,6 +24,7 @@
     $(".predict_price").click(function() {
       $.get("/predict_price_form/", function(data) {
         $("#fill_parameters").html(data);
+        $('html, body').animate({scrollTop:$('#fill_parameters').position().top}, 2000);
         });
       });
     });
