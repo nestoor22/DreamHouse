@@ -58,6 +58,10 @@ def find_new_dream_page(request):
     return render(request, 'find_new_dream_page.html')
 
 
+def get_price_prediction_form(request):
+    return render(request, 'form_for_price_prediction.html')
+
+
 def register_user(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')

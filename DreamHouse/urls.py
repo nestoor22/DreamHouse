@@ -13,8 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-import dream_house
 from django.urls import path
 from dream_house.views import *
 from django.conf.urls import url, include
@@ -25,6 +23,7 @@ from django.contrib.auth import views
 urlpatterns = [
     path(r'activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
          activate_account, name='activation'),
+    path(r'predict_price_form/', get_price_prediction_form),
     path('find_new_dream/', find_new_dream_page, name='findNewDream'),
     path('confirm_email/', confirm_email, name='confirm_email'),
     path('update_user_settings/', update_user_settings, name='changeUserSettings'),

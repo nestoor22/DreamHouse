@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../static/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
 <script>
@@ -19,6 +20,13 @@
   $(document).ready(function(){
     $('select').formSelect();
   });
+  $(document).ready(function () {
+    $(".predict_price").click(function() {
+      $.get("/predict_price_form/", function(data) {
+        $("#fill_parameters").html(data);
+        });
+      });
+    });
 </script>
   <nav>
     <div class="nav-wrapper">
@@ -74,7 +82,9 @@
   </div>
   <div class="row" style="margin-top: 40%">
     <h3 style="text-align: center; color: white" >Enter parameters</h3>
-    <div class="fill_parameters">
+    <div class="container">
+      <div id="fill_parameters">
+      </div>
     </div>
   </div>
 </body>

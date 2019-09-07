@@ -1,0 +1,87 @@
+<div class="col s12 m12 l12">
+  <div class="card-panel">
+    <div class="row">
+      <form class="col s12" id="predict_price" action="" method="post">
+        <div class="row">
+          <div class="input-field col s3">
+            <input id="area" type="number" style="text-align: center">
+              <label for="area">Area</label>
+            </div>
+
+            <div class="input-field col s3">
+              <input id="kitchen_area" type="number">
+              <label for="kitchen_area">Kitchen area</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="living_area" type="number">
+              <label for="living_area">Living area</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="rooms" type="number">
+              <label for="rooms">Rooms</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s3">
+              <input id="floor" type="number">
+              <label for="floor">Floor</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="floors" type="number">
+              <label for="floors">Floors</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="balconies" type="number">
+              <label for="balconies">Balconies</label>
+            </div>
+            <div class="input-field col s3">
+              <input id="ceiling" type="number">
+              <label for="ceiling">Ceiling</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4 ">
+              <select class="select1">
+                <option value="1">Luxury</option>
+                <option value="2">Distinctive</option>
+                <option value="3">Average</option>
+                <option value="3">Need repair</option>
+                <option value="3">Without decoration</option>
+              </select>
+              <label>Select Condition</label>
+            </div>
+            <div class="input-field col s4">
+              <select>
+                <option value="1">Brick</option>
+                <option value="2">Ferroconcrete</option>
+                <option value="3">Block</option>
+              </select>
+              <label>Select walls material</label>
+            </div>
+            <div class="input-field col s4">
+              <select>
+                <option value="1">New building</option>
+                <option value="2">House</option>
+              </select>
+              <label>Select home type</label>
+             </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 offset-s3">
+              <p style="text-align: center">Distance to center</p>
+              <input type="range" name="distance_to_center" min="0" max="25" step="0.5" value="5"
+                     oninput="result.value = distance_to_center.value + 'km'">
+              <output name="result" style="margin-left: 45%"></output>
+            </div>
+          </div>
+          <div class="row" style="margin-left: 35%; width: 50%;">
+            <div class="input-field col s4 offset-4" style="text-align: center;color: white;">
+              <button class="btn waves-effect waves-light" type="submit" form="predict_price" name="action" value="Submit">
+                Submit<i class="material-icons right">send</i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
