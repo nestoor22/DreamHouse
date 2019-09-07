@@ -146,9 +146,12 @@ def save_data_for_price_prediction(request):
     if request.method == 'POST':
         new_data = request.POST.dict()
         del new_data['csrfmiddlewaretoken']
-
         new_data_to_predict = DataToPredict.objects.create(user=request.user)
         for field, value in new_data.items():
             setattr(new_data_to_predict, field, value)
 
-        return HttpResponse(new_data)
+        return redirect('/cabinet/previousResults/')
+
+
+def show_previous_results(request):
+    return HttpResponse('Hi there')

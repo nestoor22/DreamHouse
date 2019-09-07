@@ -23,6 +23,7 @@ from django.contrib.auth import views
 urlpatterns = [
     path(r'activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/',
          activate_account, name='activation'),
+    path('cabinet/previousResults/', show_previous_results, name='previousResults'),
     path('predict_price_saving/', save_data_for_price_prediction, name='pricePrediction'),
     path(r'predict_price_form/', get_price_prediction_form),
     path('find_new_dream/', find_new_dream_page, name='findNewDream'),
