@@ -5,64 +5,64 @@
         {% csrf_token %}
         <div class="row">
           <div class="input-field col s3">
-            <input id="area" type="number" name="area" style="text-align: center">
+            <input id="area" type="number" name="area" min="0" max="2000" style="text-align: center">
               <label for="area">Area</label>
             </div>
 
             <div class="input-field col s3">
-              <input id="kitchen_area" name="kitchen_area" type="number">
+              <input id="kitchen_area" name="kitchen_area" type="number" min="0" max="100">
               <label for="kitchen_area">Kitchen area</label>
             </div>
             <div class="input-field col s3">
-              <input id="living_area" name="living_area" type="number">
+              <input id="living_area" name="living_area" type="number" min="0" max="1000">
               <label for="living_area">Living area</label>
             </div>
             <div class="input-field col s3">
-              <input id="rooms" name="rooms" type="number">
+              <input id="rooms" name="rooms" type="number" min="1" max="20">
               <label for="rooms">Rooms</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s3">
-              <input id="floor" name="floor" type="number">
+              <input id="floor" name="floor" type="number" min="1" max="100">
               <label for="floor">Floor</label>
             </div>
             <div class="input-field col s3">
-              <input id="floors"  name="floors" type="number">
+              <input id="floors"  name="floors" type="number" min="1" max="100">
               <label for="floors">Floors</label>
             </div>
             <div class="input-field col s3">
-              <input id="balconies" name="balconies" type="number">
+              <input id="balconies" name="balconies" type="number" min="0" max="5">
               <label for="balconies">Balconies</label>
             </div>
             <div class="input-field col s3">
-              <input id="ceiling" name="ceiling" type="number">
+              <input id="ceiling" name="ceiling" type="number" min="2" max="5" step="0.1">
               <label for="ceiling">Ceiling</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s4 ">
               <select name="condition">
-                <option value="1">Luxury</option>
-                <option value="2">Distinctive</option>
-                <option value="3">Average</option>
-                <option value="3">Need repair</option>
-                <option value="3">Without decoration</option>
+                <option value="Luxury">Luxury</option>
+                <option value="Distinctive">Distinctive</option>
+                <option value="Average">Average</option>
+                <option value="Need repair">Need repair</option>
+                <option value="Without decoration">Without decoration</option>
               </select>
               <label>Select Condition</label>
             </div>
             <div class="input-field col s4">
               <select name="walls_material">
-                <option value="1">Brick</option>
-                <option value="2">Ferroconcrete</option>
-                <option value="3">Block</option>
+                <option value="Brick">Brick</option>
+                <option value="Ferroconcrete">Ferroconcrete</option>
+                <option value="Block">Block</option>
               </select>
               <label>Select walls material</label>
             </div>
             <div class="input-field col s4">
               <select name="building_type">
-                <option value="1">New building</option>
-                <option value="2">House</option>
+                <option value="New building">New building</option>
+                <option value="House">House</option>
               </select>
               <label>Select home type</label>
              </div>
