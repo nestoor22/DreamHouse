@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from .helpers import check_user_not_exist
 from django.contrib.auth.models import User
 from django.utils.encoding import force_text
+from .tasks import send_email_for_activation
 from django.shortcuts import render, redirect
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
@@ -120,9 +121,7 @@ def confirm_email(request):
         'uid': urlsafe_base64_encode(force_bytes(user.id)).decode(),
         'token': account_activation_token.make_token(user),
     })
-
-    send_mail('DreamHouse confirm email', message, settings.EMAIL_HOST_USER,
-              ['nestorslavko45@gmail.com'], fail_silently=False)
+    send_email_for_activation.delay(user.email, message)
 
     return render(request, 'cabinet.html', {'message': 'Email message is sended'})
 
