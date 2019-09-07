@@ -1,9 +1,17 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 # Create your models here.
-# class DataToPredict(models.Model):
-#     pass
+class DataToPredict(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    price = models.FloatField(default=None)
+    area = models.FloatField(default=None)
+    rooms = models.IntegerField(default=None)
+    floor = models.IntegerField(default=None)
+
+
+    pass
 
 
 class Profile(models.Model):
