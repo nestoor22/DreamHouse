@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 
 
 class DataToPredict(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    id = models.IntegerField(primary_key=True)
     price = models.FloatField(default=None, null=True, blank=True)
     area = models.FloatField(default=None, null=True,  blank=True)
     rooms = models.IntegerField(default=None, null=True, blank=True)
