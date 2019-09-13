@@ -1,3 +1,2 @@
 # **DreamHouse**
-_Web-site written in Python/Django/JS. Using modules from
-apartmentML repo._
+_Web-site written in Python/Django/JS_
