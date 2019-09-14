@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+import datetime
 
 class DataToPredict(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -18,6 +18,8 @@ class DataToPredict(models.Model):
     balconies = models.IntegerField(default=None, null=True)
     ceiling_height = models.FloatField(default=None, null=True)
     floors = models.IntegerField(default=None, null=True)
+    created_at = models.DateTimeField(default=datetime.datetime.now(), null=True)
+    solved_at = models.DateTimeField(default=datetime.datetime.now(), null=True)
 
 
 class Profile(models.Model):
