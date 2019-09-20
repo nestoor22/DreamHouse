@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime
 
+
 class DataToPredict(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     id = models.IntegerField(primary_key=True)
@@ -13,12 +14,11 @@ class DataToPredict(models.Model):
     distance_to_center = models.FloatField(default=None,null=True, blank=True)
     living_area = models.FloatField(default=None, null=True)
     kitchen_area = models.FloatField(default=None, null=True)
-    condition = models.CharField(max_length=40,null=True, default=None)
+    conditions = models.CharField(max_length=40,null=True, default=None)
     walls_material = models.CharField(max_length=40,null=True, default=None)
     balconies = models.IntegerField(default=None, null=True)
     ceiling_height = models.FloatField(default=None, null=True)
     floors = models.IntegerField(default=None, null=True)
-    created_at = models.DateTimeField(default=datetime.datetime.now(), null=True)
     solved_at = models.DateTimeField(default=datetime.datetime.now(), null=True)
 
 
