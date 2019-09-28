@@ -1,5 +1,6 @@
 from django.contrib import admin
+from dream_house.models import DataToPredict, Profile
 
 # Register your models here.
-class User():
-    pass
+admin.site.register(DataToPredict)
+admin.site.register(Profile)

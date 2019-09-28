@@ -82,9 +82,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dream_house',
         'USER': 'root',
-        'PASSWORD': '<your_password>',
-        'HOST': '<your_host>',
-        'PORT': '<your_port>',
+        'PASSWORD': 'asdfghjkl228',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -132,14 +132,14 @@ USE_TZ = True
 LOGIN_URL = 'signUp'
 LOGIN_REDIRECT_URL = 'main'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ''  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ''
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '161410404293-jsujdo415on8am842nchl344venk0ukc.apps.googleusercontent.com'  #Paste CLient Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'DbtTtwN7MBDwnru7JI5toqUZ'
 
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = ''    # your email password
-EMAIL_HOST_USER = ''        # your email username
+EMAIL_HOST_PASSWORD = 'Slavko-Nestor04062001'    # your email password
+EMAIL_HOST_USER = 'yaroslav.nestor22@gmail.com'        # your email username
 EMAIL_PORT = 587
 
 

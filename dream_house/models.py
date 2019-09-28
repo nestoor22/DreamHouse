@@ -4,8 +4,8 @@ import datetime
 
 
 class DataToPredict(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    id = models.IntegerField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    id = models.AutoField(primary_key=True)
     price = models.FloatField(default=None, null=True, blank=True)
     area = models.FloatField(default=None, null=True,  blank=True)
     rooms = models.IntegerField(default=None, null=True, blank=True)
@@ -19,7 +19,7 @@ class DataToPredict(models.Model):
     balconies = models.IntegerField(default=None, null=True)
     ceiling_height = models.FloatField(default=None, null=True)
     floors = models.IntegerField(default=None, null=True)
-    solved_at = models.DateTimeField(default=datetime.datetime.now(), null=True)
+    solved_at = models.DateTimeField(default=datetime.datetime.now, null=True)
 
 
 class Profile(models.Model):

@@ -1,4 +1,7 @@
+import json
+import requests
 from django.conf import settings
+from django.http import HttpResponse
 from .helpers import check_user_not_exist
 from .models import Profile, DataToPredict
 from django.contrib.auth.models import User
@@ -12,7 +15,6 @@ from django.template.loader import render_to_string
 from dream_house.tokens import account_activation_token
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.sites.shortcuts import get_current_site
-from django.http import HttpResponse
 
 
 def index(request):
@@ -60,7 +62,7 @@ def find_new_dream_page(request):
 
 
 def get_price_prediction_form(request):
-    return render(request, 'form_for_price_prediction.html')
+    return render(request, 'prediction_forms/form_for_price_prediction.html')
 
 
 def register_user(request):
@@ -150,6 +152,10 @@ def save_data_for_price_prediction(request):
         for field, value in new_data.items():
             setattr(new_data_to_predict, field, value)
 
+        new_data_to_predict.save()
+        new_data['user_id'] = request.user.id
+        print(new_data)
+        requests.post('http://localhost:5000/predictPrice/', json=new_data)
         return redirect('/cabinet/previousResults/')
 
 
