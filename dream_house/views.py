@@ -150,12 +150,13 @@ def save_data_for_price_prediction(request):
         del new_data['csrfmiddlewaretoken']
         new_data_to_predict = DataToPredict.objects.create(user=request.user)
         for field, value in new_data.items():
-            setattr(new_data_to_predict, field, value)
+            if isinstance(value, str):
+                setattr(new_data_to_predict, field, value.lower())
+            else:
+                setattr(new_data_to_predict, field, value)
 
         new_data_to_predict.save()
-        new_data['user_id'] = request.user.id
-        print(new_data)
-        requests.post('http://localhost:5000/predictPrice/', json=new_data)
+        requests.post('http://localhost:5000/predictPrice/', data={'user_id': request.user.id})
         return redirect('/cabinet/previousResults/')
 
 
