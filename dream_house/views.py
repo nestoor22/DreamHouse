@@ -150,7 +150,7 @@ def save_data_for_price_prediction(request):
         del new_data['csrfmiddlewaretoken']
         new_data_to_predict = DataToPredict.objects.create(user=request.user)
         for field, value in new_data.items():
-            if isinstance(value, str):
+            if isinstance(value, str) and field != 'building_type':
                 setattr(new_data_to_predict, field, value.lower())
             else:
                 setattr(new_data_to_predict, field, value)
