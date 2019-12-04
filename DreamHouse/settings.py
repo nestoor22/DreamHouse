@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from dream_house.secret import MY_EMAIL_HOST, MY_EMAIL_HOST_PASSWORD, DB_PASSWORD, DB_USER, SECRET_DJANGO_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fqbe=j3$q42+lb)r^pm(upj^@fn#skgqpjqxx@#^)m6+48w$x@'
+SECRET_KEY = SECRET_DJANGO_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dream_house',
-        'USER': 'root',
-        'PASSWORD': 'asdfghjkl228',
+        'USER': DB_USER,
+        'PASSWORD': DB_PASSWORD,
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -138,8 +139,8 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'DbtTtwN7MBDwnru7JI5toqUZ'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_PASSWORD = 'Slavko-Nestor04062001'    # your email password
-EMAIL_HOST_USER = 'yaroslav.nestor22@gmail.com'        # your email username
+EMAIL_HOST_PASSWORD = MY_EMAIL_HOST_PASSWORD    # your email password
+EMAIL_HOST_USER = MY_EMAIL_HOST        # your email username
 EMAIL_PORT = 587
 
 

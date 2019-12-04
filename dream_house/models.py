@@ -24,7 +24,7 @@ class DataToPredict(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    location = models.CharField(max_length=30, blank=True)
+    location = models.CharField(max_length=30, null=True)
     birth_date = models.DateField(null=True, blank=True)
-    profile_type = models.CharField(max_length=30, blank=True, default='Not active')
-    account_type = models.CharField(max_length=30, blank=True, default='Basic')
+    profile_type = models.CharField(max_length=30, null=True, default='Not active')
+    account_type = models.CharField(max_length=30, null=True, default='Basic')

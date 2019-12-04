@@ -1,6 +1,7 @@
 import json
 import requests
 from django.conf import settings
+from .forms import UserRegisterForm
 from django.http import HttpResponse
 from .helpers import check_user_not_exist
 from .models import Profile, DataToPredict
@@ -22,7 +23,8 @@ def index(request):
 
 
 def sign_in(request):
-    return render(request, 'signUp.html')
+    form = UserRegisterForm()
+    return render(request, 'signUp.html', {'form': form})
 
 
 def logout_view(request):
@@ -67,17 +69,24 @@ def get_price_prediction_form(request):
 
 def register_user(request):
     if request.method == 'POST':
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        email = request.POST.get('email')
+        form = UserRegisterForm(request.POST)
+        if not form.is_valid():
+            return redirect(index)
+
+        first_name = form.cleaned_data['first_name']
+        last_name = form.cleaned_data['last_name']
+        email = form.cleaned_data['email']
+
         username = email.split('@')[0]
-        password = request.POST.get('password')
+        password = form.cleaned_data['password']
+
         if not check_user_not_exist(email):
             return render(request, 'signUp.html', {'message': 'This email is already token'})
 
         user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name,
                                         last_name=last_name)
-        new_profile = Profile.objects.create(user=user, location="L'viv", profile_type='Not active')
+
+        new_profile = Profile.objects.create(user=user)
         new_profile.save()
 
         new_user = authenticate(request, username=username, password=password)
