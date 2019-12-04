@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load filters %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +8,7 @@
     <title>Register   |</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../static/style.css">
     <script src="../static/js/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
@@ -46,18 +48,18 @@
       </div>
       <div class="row" style="margin-left: 35%; width: 50%">
         <div class="input-field col s3">
-          {{ form.first_name }}
+          {{ form.first_name|add_css_class:'register_form_style' }}
         </div>
         <div class="input-field col s3">
-          {{  form.last_name }}
+          {{  form.last_name|add_css_class:'register_form_style' }}
         </div>
       </div>
       <div class="row" style="margin-left: 35%; width: 50%;">
         <div class="input-field col s3" style="text-align: center;color: white">
-          {{ form.email }}
+          {{ form.email|add_css_class:'register_form_style' }}
         </div>
         <div class="input-field col s3">
-          {{ form.password }}
+          {{ form.password|add_css_class:'register_form_style' }}
         </div>
       </div>
       <div class="row" style="margin-left: 35%; width: 50%;">

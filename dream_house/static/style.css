@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: black;
+    background-color: #000000;
 }
 
 .brand-logo {
@@ -65,7 +65,7 @@ body{
 }
 
 #find_new_dream_menu {
-    background-color: black;
+    background-color: #000000;
     margin: 40px;
     font-size: x-large;
     color: orange;
@@ -76,4 +76,9 @@ body{
     color: #16243c;
     transform-style: flat;
     transition-duration: 0.5s;
+}
+
+.register_form_style {
+    color: #FFFFFF;
+    text-align: center;
 }
