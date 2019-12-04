@@ -12,7 +12,7 @@ app = Celery(app='dream_house')
 app.config_from_object('django.conf:settings', )
 
 app.autodiscover_tasks()
-app.conf.update( result_expires=3600, enable_utc=True, timezone='Europe/Minsk' )
+app.conf.update(result_expires=3600, enable_utc=True, timezone='Europe/Minsk' )
 
 app.conf.beat_schedule = {
     'send-report-every-single-minute': {
