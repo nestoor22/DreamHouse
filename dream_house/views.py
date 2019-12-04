@@ -1,7 +1,6 @@
 import json
 import requests
 from django.conf import settings
-from .forms import UserRegisterForm
 from django.http import HttpResponse
 from .helpers import check_user_not_exist
 from .models import Profile, DataToPredict
@@ -10,6 +9,7 @@ from django.utils.encoding import force_text
 from .tasks import send_email_for_activation
 from django.shortcuts import render, redirect
 from django.utils.encoding import force_bytes
+from .forms import UserRegisterForm, UserLogInForm
 from django.utils.http import urlsafe_base64_encode
 from django.utils.http import urlsafe_base64_decode
 from django.template.loader import render_to_string
@@ -36,7 +36,8 @@ def log_in_page(request):
     if request.user.is_authenticated:
         return redirect(user_room)
     else:
-        return render(request, 'logIn.html')
+        log_in_form = UserLogInForm()
+        return render(request, 'logIn.html', {'form': log_in_form})
 
 
 def user_room(request):

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load filters %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,10 +46,10 @@
       </div>
       <div class="row" style="margin-left: 35%; width: 50%;">
         <div class="input-field col s3" style="text-align: center;color: white">
-          <input placeholder="Email" name="email" type="email" class="validate" style="text-align: center;color: white">
+          {{ form.email|add_css_class:'register_form_style' }}
         </div>
         <div class="input-field col s3">
-          <input placeholder="Password" name="password" type="password" class="validate" style="text-align: center;color: white">
+          {{ form.password|add_css_class:'register_form_style' }}
         </div>
       </div>
       <div class="row" style="margin-left: 41.5%; width: 50%;">
