@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
 <head>
-    <meta charset="UTF-8">
+
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DreamHomePrice</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -12,7 +12,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   <script src="../static/js/dist/datepicker.js" rel="stylesheet"></script>
+
 </head>
+
 <body>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -39,35 +41,7 @@
   });
   $('[data-toggle="datepicker"]').datepicker();
 </script>
-
-  <nav>
-    <div class="nav-wrapper">
-      <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
-    <a href="#" class="sidenav-trigger" data-target="mobile-nav">
-			<i class="material-icons">menu</i>
-		</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
-        <li><a href="{%url 'main'%}" class="link-how-it-works">How it works</a></li>
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'cabinet' %}">My profile</a> </li>
-            <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
-          {% else %}
-            <li><a href="{% url 'signUp' %}">Sign Up</a></li>
-            <li><a href="{% url 'logIn' %}">Log In</a> </li>
-          {% endif %}
-      </ul>
-    </div>
-  </nav>
-  <ul id="mobile-nav" class="sidenav">
-        <li><a href="{%url 'main'%}" style="color: white" class="link-how-it-works">How it works</a></li>
-          {% if user.is_authenticated %}
-            <li><a href="#" style="color: white">My profile</a> </li>
-            <li><a href="{% url 'logOut' %}" style="color: white"> Log Out</a> </li>
-          {% else %}
-            <li><a href="{% url 'signUp' %}" style="color: white">Sign Up</a></li>
-            <li><a href="{% url 'logIn' %}" style="color: white">Log In</a> </li>
-          {% endif %}
-  </ul>
+  {% include 'header.html' %}
   <div class="row">
     <div class="col s12 m3" style="margin: 0;padding: 0; background-color: #16243c;border-bottom-right-radius: 3px">
       <h5 style="color: white; text-align: center">{{ user.first_name }}</h5>

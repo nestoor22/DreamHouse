@@ -29,24 +29,7 @@
     });
   });
 </script>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
-    <a href="#" class="sidenav-trigger" data-target="mobile-nav">
-			<i class="material-icons">menu</i>
-		</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
-        <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
-          {% if user.is_authenticated %}
-            <li><a href="{% url 'cabinet' %}">My profile</a> </li>
-            <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
-          {% else %}
-            <li><a href="{% url 'signUp' %}">Sign Up</a></li>
-            <li><a href="{% url 'logIn' %}">Log In</a> </li>
-          {% endif %}
-      </ul>
-    </div>
-  </nav>
+  {% include 'header.html' %}
   <ul id="mobile-nav" class="sidenav" style="margin-right: 25px">
         <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
           {% if user.is_authenticated %}

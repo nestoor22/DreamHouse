@@ -21,23 +21,7 @@
  	});
 </script>
 
-  <nav>
-    <div class="nav-wrapper">
-      <a href="{%url 'main'%}" class="brand-logo"><i class="material-icons" style="font-size: 40px">home</i></a>
-      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
-			<i class="material-icons">menu</i>
-		  </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
-        <li><a href="{%url 'main'%}" class="link-how-it-works">How it works</a></li>
-        <li><a href="{% url 'signUp' %}">Sign Up</a></li>
-      </ul>
-    </div>
-  </nav>
-
-<ul id="mobile-nav" class="sidenav" style="margin-right: 25px">
-  <li><a href="{%url 'main'%}" class="link-how-it-works">How it works</a></li>
-  <li><a href="{% url 'signUp' %}">Sign Up</a></li>
-</ul>
+  {% include 'header.html' %}
   <div class="row">
     <form class="col s12" id="register" action="{% url 'createUser' %}" method="post">
       {% csrf_token %}
