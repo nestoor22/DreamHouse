@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body style="background-image: url('../static/images/cabinet_back.jpg'); background-size: cover">
 <script type="text/javascript">
     $(document).ready(function () {
         $(".load_user_info").click(function() {
@@ -42,7 +42,7 @@
   });
   $('[data-toggle="datepicker"]').datepicker();
 </script>
-  {% include 'header.html' %}
+{% include 'header.html' %}
   <div class="row">
     <div class="col s12 m3" style="margin: 0;padding: 0; background-color: #16243c;border-bottom-right-radius: 3px">
       <h5 style="color: white; text-align: center">{{ user.first_name }}</h5>
@@ -58,43 +58,7 @@
       </div>
     </div>
     <div class="col s12 m9" id="loaded_content" style="padding: 10px;">
-      <div class="container" style="background-color: #16243c; color:white;padding: 10px; width: 90%; border-radius: 5px">
-        {% if user.profile.profile_type == 'Not active'%}
-          <div class="row">
-            <div class="col s8 offset-s2" style="text-align: center;">
-              <h6>{{ message }}</h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s8 offset-s2" style="text-align: center;">
-              <h6>Please, confirm your email:       <a href="{% url 'confirm_email' %}">Confirm now</a></h6>
-            </div>
-          </div>
-        {% endif %}
-        <div class="row" style="margin-left: 50px">
-          <div class="col s2"><h6>First name:</h6></div>
-          <div class="col s4"><h6>{{ user.first_name }}</h6></div>
-          <div class="col s2"><h6>Last name:</h6></div>
-          <div class="col s4"><h6>{{ user.last_name }}</h6></div>
-        </div>
-        <div class="row" style="margin-left: 50px">
-          <div class="col s2"><h6>Email:</h6></div>
-          <div class="col s4"><h6>{{ user.email }}</h6></div>
-          <div class="col s2"><h6>Account:</h6></div>
-          <div class="col s4"><h6>{{ user.profile.profile_type }}</h6></div>
-        </div>
-
-        <div class="row">
-          <div class='col s4 offset-s4' style="text-align: center">
-            {% if user.profile.profile_type == 'Active' %}
-              <a href="{% url 'findNewDream' %}"><h5>Find new dream</h5></a></div>
-            {% elif  user.profile.profile_type == 'Not active'%}
-              <h5 style="color: darkgrey" title="Confirm email and activate account">Find new dream</h5>
-            {% endif %}
-        </div>
-      </div>
+    {% include 'profile_info.html' %}
     </div>
   </div>
-{% include 'footer.html' %}
 </body>
-</html>

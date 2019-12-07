@@ -121,7 +121,10 @@ def update_user_settings(request):
         request.user.last_name = request.POST.get('last_name')
         request.user.email = request.POST.get('email')
         request.user.profile.location = request.POST.get('user_location')
-        request.user.profile.birth_date = request.POST.get('user_birth_date')
+        if request.POST.get('user_birth_date') == "":
+            request.user.profile.birth_date = None
+        else:
+            request.user.profile.birth_date = request.POST.get('user_birth_date')
 
     request.user.save()
     request.user.profile.save()
@@ -138,7 +141,7 @@ def confirm_email(request):
     })
     send_email_for_activation.delay(user.email, message)
 
-    return render(request, 'cabinet.html', {'message': 'Email message is sended'})
+    return render(request, 'cabinet.html', {'message': 'Email message is sent'})
 
 
 def activate_account(request, uidb64, token):
@@ -161,6 +164,7 @@ def save_data_for_price_prediction(request):
     if request.method == 'POST':
         new_data = request.POST.dict()
         del new_data['csrfmiddlewaretoken']
+
         new_data_to_predict = DataToPredict.objects.create(user=request.user)
         for field, value in new_data.items():
             if isinstance(value, str) and field != 'building_type':
@@ -169,6 +173,7 @@ def save_data_for_price_prediction(request):
                 setattr(new_data_to_predict, field, value)
 
         new_data_to_predict.save()
+
         requests.post('http://localhost:5000/predictPrice/', data={'user_id': request.user.id})
         return redirect('/cabinet/previousResults/')
 
