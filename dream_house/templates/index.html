@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
 
@@ -88,27 +88,7 @@
       </div>
     </div>
   </div>
-  <footer class="page-footer" style="background-color: #16243c; padding: 0">
-    <div class="container" style="width: 100%;">
-      <div class="row">
-        <div class="col s12 m4" style="padding-top: 20px">
-          <p class="grey-text text-lighten-2"></p>
-        </div>
-        <div class="col s12 offset-l6 m2" style="padding-top: 20px">
-          <ul style="display: inline">
-            <li><a class="fa fa-facebook" href="#"></a>Facebook</li>
-            <li><a class="fa fa-google" href="#"></a>Google</li>
-            <li><a class="fa fa-linkedin" href="#"></a>LinkedIn</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright" style="font-size: x-small; margin: 0">
-      <div class="container">
-      © 2019 Everyone can copyright this pet project =)
-      </div>
-    </div>
-  </footer>
+{% include 'footer.html' %}
 <script type="text/javascript">
 $('.link-how-it-works').click(function(){
        $('html, body').animate({scrollTop:$('.h1-how-it-works').position().top}, 2000);

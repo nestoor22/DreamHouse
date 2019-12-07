@@ -19,7 +19,7 @@ from django.contrib.sites.shortcuts import get_current_site
 
 
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'onclick_result': 'return false'})
 
 
 def sign_in(request):
@@ -37,11 +37,12 @@ def log_in_page(request):
         return redirect(user_room)
     else:
         log_in_form = UserLogInForm()
-        return render(request, 'logIn.html', {'form': log_in_form})
+        return render(request, 'logIn.html', {'form': log_in_form,
+                                              'onclick_result': 'return true'})
 
 
 def user_room(request):
-    return render(request, 'cabinet.html')
+    return render(request, 'cabinet.html', {'onclick_result': 'return true'})
 
 
 def user_parameters(request):
@@ -107,9 +108,11 @@ def user_log_in(request):
             return redirect(index)
         else:
             if check_user_not_exist(email):
-                return render(request, 'logIn.html', {'message': 'Incorrect email'})
+                return render(request, 'logIn.html', {'message': 'Incorrect email',
+                                                      'onclick_result': 'return true'})
 
-            return render(request, 'logIn.html', {'message': 'Incorrect password'})
+            return render(request, 'logIn.html', {'message': 'Incorrect password',
+                                                  'onclick_result': 'return true'})
 
 
 def update_user_settings(request):
@@ -151,7 +154,7 @@ def activate_account(request, uidb64, token):
         user_profile.save()
         return redirect(index)
     else:
-        return render(request, 'cabinet.html')
+        return render(request, 'cabinet.html', {'onclick_result': 'return true'})
 
 
 def save_data_for_price_prediction(request):

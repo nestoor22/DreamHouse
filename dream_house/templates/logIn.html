@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register   |</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../static/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,7 +21,7 @@
 </script>
 {% include 'header.html' %}
   <div class="row">
-    <form class="col s12" id="log_in" method="post" action="{% url 'UserLogIn' %}">
+    <form class="col s12 login-form" id="log_in" method="post" action="{% url 'UserLogIn' %}">
       {% csrf_token %}
       <div class="row" style="margin-left: 35%; margin-top: 10%; width: 25%; margin-bottom: 0">
         <h6 style="text-align:center; color: darkred">{{ message }}</h6>
@@ -44,5 +45,6 @@
       </div>
     </form>
   </div>
+{% include 'footer.html' %}
 </body>
 </html>

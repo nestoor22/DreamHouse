@@ -5,8 +5,8 @@
   <a href="#" class="sidenav-trigger" data-target="mobile-nav">
     <i class="material-icons">menu</i>
   </a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px">
-      <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
+    <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 25px;">
+      <li><a href="{%url 'main'%}" onclick= "{{ onclick_result }}" class="link-how-it-works">How it works</a></li>
         {% if user.is_authenticated %}
           <li><a href="{% url 'cabinet' %}">My profile</a> </li>
           <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
@@ -18,12 +18,12 @@
   </div>
 </nav>
 <ul id="mobile-nav" class="sidenav" style="margin-right: 25px">
-      <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
-        {% if user.is_authenticated %}
-          <li><a href="#">{{ user.username }}</a> </li>
-          <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
-        {% else %}
-          <li><a href="{% url 'signUp' %}">Sign Up</a></li>
-          <li><a href="{% url 'logIn' %}">Log In</a> </li>
-        {% endif %}
+  <li><a href="{%url 'main'%}" onclick="return false">How it works</a></li>
+    {% if user.is_authenticated %}
+      <li><a href="#">{{ user.username }}</a></li>
+      <li><a href="{% url 'logOut' %}"> Log Out</a> </li>
+    {% else %}
+      <li><a href="{% url 'signUp' %}">Sign Up</a></li>
+      <li><a href="{% url 'logIn' %}">Log In</a> </li>
+    {% endif %}
 </ul>

@@ -11,6 +11,10 @@ body{
     background-color: #16243c;
 }
 
+.sidenav li>a{
+    color: white;
+}
+
 #menu{
     display: block;
     height: 30px;
@@ -72,10 +76,18 @@ body{
     display: inline;
 }
 
+.login-form{
+    margin-bottom: 200px;
+}
+
 #find_new_dream_menu:hover{
     color: #16243c;
     transform-style: flat;
     transition-duration: 0.5s;
+}
+
+.social-link{
+    margin-left: 20px;
 }
 
 .register_form_style {
