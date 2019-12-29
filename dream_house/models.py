@@ -15,6 +15,7 @@ class DataToPredict(models.Model):
     living_area = models.FloatField(default=None, null=True)
     kitchen_area = models.FloatField(default=None, null=True)
     conditions = models.CharField(max_length=40, null=True, default=None)
+    city = models.CharField(max_length=40, null=True, default=None)
     walls_material = models.CharField(max_length=40, null=True, default=None)
     balconies = models.IntegerField(default=None, null=True)
     ceiling_height = models.FloatField(default=None, null=True)

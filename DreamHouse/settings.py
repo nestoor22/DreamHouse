@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from dream_house.secret import MY_EMAIL_HOST, MY_EMAIL_HOST_PASSWORD, DB_PASSWORD, DB_USER, SECRET_DJANGO_KEY
+from dream_house.secret import MY_EMAIL_HOST, MY_EMAIL_HOST_PASSWORD, DB_PASSWORD, DB_USER, SECRET_DJANGO_KEY,\
+    DB_HOST, DB_NAME, DB_PORT
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -80,12 +81,12 @@ WSGI_APPLICATION = 'DreamHouse.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dream_house',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': DB_NAME,
         'USER': DB_USER,
         'PASSWORD': DB_PASSWORD,
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'HOST': DB_HOST,
+        'PORT': DB_PORT,
     }
 }
 
@@ -152,8 +153,11 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 STATIC_URL = '/static/'
 
 # Celery settings
-REDIS_HOST = 'localhost'
-REDIS_PORT = '6379'
+
+# REDIS_HOST = 'localhost'
+# REDIS_PORT = '6379'
+REDIS_HOST = 'ec2-54-229-139-104.eu-west-1.compute.amazonaws.com'
+REDIS_PORT = '16089'
 BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 UTC_ENABLE = True
