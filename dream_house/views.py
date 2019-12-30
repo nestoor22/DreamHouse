@@ -1,6 +1,4 @@
-import json
 import requests
-from django.conf import settings
 from django.http import HttpResponse
 from .helpers import check_user_not_exist
 from .models import Profile, DataToPredict
@@ -38,7 +36,7 @@ def log_in_page(request):
     else:
         log_in_form = UserLogInForm()
         return render(request, 'pages/logIn.html', {'form': log_in_form,
-                                              'onclick_result': 'return true'})
+                                                    'onclick_result': 'return true'})
 
 
 def user_room(request):
@@ -109,10 +107,10 @@ def user_log_in(request):
         else:
             if check_user_not_exist(email):
                 return render(request, 'pages/logIn.html', {'message': 'Incorrect email',
-                                                      'onclick_result': 'return true'})
+                                                            'onclick_result': 'return true'})
 
             return render(request, 'pages/logIn.html', {'message': 'Incorrect password',
-                                                  'onclick_result': 'return true'})
+                                                        'onclick_result': 'return true'})
 
 
 def update_user_settings(request):

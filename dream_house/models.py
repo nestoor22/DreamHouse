@@ -11,7 +11,7 @@ class DataToPredict(models.Model):
     rooms = models.IntegerField(default=None, null=True, blank=True)
     floor = models.IntegerField(default=None, null=True)
     building_type = models.CharField(max_length=40, null=True, default=None)
-    distance_to_center = models.FloatField(default=None,null=True, blank=True)
+    distance_to_center = models.FloatField(default=None, null=True, blank=True)
     living_area = models.FloatField(default=None, null=True)
     kitchen_area = models.FloatField(default=None, null=True)
     conditions = models.CharField(max_length=40, null=True, default=None)

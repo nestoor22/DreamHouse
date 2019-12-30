@@ -134,7 +134,8 @@ USE_TZ = True
 LOGIN_URL = 'signUp'
 LOGIN_REDIRECT_URL = 'main'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '161410404293-jsujdo415on8am842nchl344venk0ukc.apps.googleusercontent.com'  #Paste CLient Key
+#  Paste Client Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '161410404293-jsujdo415on8am842nchl344venk0ukc.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'DbtTtwN7MBDwnru7JI5toqUZ'
 
 EMAIL_USE_TLS = True
