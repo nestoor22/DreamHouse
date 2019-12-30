@@ -7,16 +7,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link  href="../static/js/dist/datepicker.css" rel="stylesheet">
+  <link href="../../static/js/dist/datepicker.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../static/style.css">
+  <link rel="stylesheet" href="../../static/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script src="../static/js/dist/datepicker.js" rel="stylesheet"></script>
+  <script src="../../static/js/dist/datepicker.js" rel="stylesheet"></script>
 
 </head>
 
-<body style="background-image: url('../static/images/cabinet_back.jpg'); background-size: cover">
+<body style="background-image: url('../../static/images/cabinet_back.jpg'); background-size: cover">
 <script type="text/javascript">
     $(document).ready(function () {
         $(".load_user_info").click(function() {
@@ -42,7 +42,7 @@
   });
   $('[data-toggle="datepicker"]').datepicker();
 </script>
-{% include 'header.html' %}
+{% include 'staticParts/header.html' %}
   <div class="row">
     <div class="col s12 m3" style="margin: 0;padding: 0; background-color: #16243c;border-bottom-right-radius: 3px">
       <h5 style="color: white; text-align: center">{{ user.first_name }}</h5>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="col s12 m9" id="loaded_content" style="padding: 10px;">
-    {% include 'profile_info.html' %}
+    {% include 'cabinet/profile_info.html' %}
     </div>
   </div>
 </body>

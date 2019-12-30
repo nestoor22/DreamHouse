@@ -19,12 +19,12 @@ from django.contrib.sites.shortcuts import get_current_site
 
 
 def index(request):
-    return render(request, 'index.html', {'onclick_result': 'return false'})
+    return render(request, 'pages/index.html', {'onclick_result': 'return false'})
 
 
 def sign_in(request):
     form = UserRegisterForm()
-    return render(request, 'signUp.html', {'form': form})
+    return render(request, 'pages/signUp.html', {'form': form})
 
 
 def logout_view(request):
@@ -37,32 +37,32 @@ def log_in_page(request):
         return redirect(user_room)
     else:
         log_in_form = UserLogInForm()
-        return render(request, 'logIn.html', {'form': log_in_form,
+        return render(request, 'pages/logIn.html', {'form': log_in_form,
                                               'onclick_result': 'return true'})
 
 
 def user_room(request):
-    return render(request, 'cabinet.html', {'onclick_result': 'return true'})
+    return render(request, 'cabinet/cabinet.html', {'onclick_result': 'return true'})
 
 
 def user_parameters(request):
-    return render(request, 'profile_info.html')
+    return render(request, 'cabinet/profile_info.html')
 
 
 def user_subscribes(request):
-    return render(request, 'subscribes_page.html')
+    return render(request, 'cabinet/subscribes_page.html')
 
 
 def user_settings(request):
-    return render(request, 'user_settings.html')
+    return render(request, 'cabinet/user_settings.html')
 
 
 def change_user_setting(request):
-    return render(request, 'user_setting_change.html')
+    return render(request, 'cabinet/user_setting_change.html')
 
 
 def find_new_dream_page(request):
-    return render(request, 'find_new_dream_page.html')
+    return render(request, 'pages/find_new_dream_page.html')
 
 
 def get_price_prediction_form(request):
@@ -83,7 +83,7 @@ def register_user(request):
         password = form.cleaned_data['password']
 
         if not check_user_not_exist(email):
-            return render(request, 'signUp.html', {'message': 'This email is already token'})
+            return render(request, 'pages/signUp.html', {'message': 'This email is already token'})
 
         user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name,
                                         last_name=last_name)
@@ -108,10 +108,10 @@ def user_log_in(request):
             return redirect(index)
         else:
             if check_user_not_exist(email):
-                return render(request, 'logIn.html', {'message': 'Incorrect email',
+                return render(request, 'pages/logIn.html', {'message': 'Incorrect email',
                                                       'onclick_result': 'return true'})
 
-            return render(request, 'logIn.html', {'message': 'Incorrect password',
+            return render(request, 'pages/logIn.html', {'message': 'Incorrect password',
                                                   'onclick_result': 'return true'})
 
 
@@ -141,7 +141,7 @@ def confirm_email(request):
     })
     send_email_for_activation.delay(user.email, message)
 
-    return render(request, 'cabinet.html', {'message': 'Email message is sent'})
+    return render(request, 'cabinet/cabinet.html', {'message': 'Email message is sent'})
 
 
 def activate_account(request, uidb64, token):
@@ -157,7 +157,7 @@ def activate_account(request, uidb64, token):
         user_profile.save()
         return redirect(index)
     else:
-        return render(request, 'cabinet.html', {'onclick_result': 'return true'})
+        return render(request, 'cabinet/cabinet.html', {'onclick_result': 'return true'})
 
 
 def save_data_for_price_prediction(request):

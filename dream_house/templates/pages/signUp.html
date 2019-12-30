@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../../static/style.css">
 </head>
 <body>
 
@@ -21,7 +21,7 @@
  	});
 </script>
 
-  {% include 'header.html' %}
+{% include 'staticParts/header.html' %}
   <div class="row">
     <form class="col s12" id="register" action="{% url 'createUser' %}" method="post">
       {% csrf_token %}
@@ -55,6 +55,6 @@
       </div>
     </form>
   </div>
-  {% include 'footer.html' %}
+  {% include 'staticParts/footer.html' %}
 </body>
 </html>

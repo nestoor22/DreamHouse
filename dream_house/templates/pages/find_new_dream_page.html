@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../../static/style.css">
 </head>
 <body>
 <script>
@@ -29,7 +29,7 @@
     });
   });
 </script>
-  {% include 'header.html' %}
+  {% include 'staticParts/header.html' %}
   <ul id="mobile-nav" class="sidenav" style="margin-right: 25px">
         <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
           {% if user.is_authenticated %}

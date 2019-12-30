@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../../static/style.css">
 </head>
 <body>
 
@@ -18,10 +18,10 @@
  		$('.sidenav').sidenav();
  	});
 </script>
-  {% include 'header.html' %}
+  {% include 'staticParts/header.html' %}
 
   <div class="header-logo-block">
-        <img class="header-logo" src="../static/images/background.png" alt="">
+        <img class="header-logo" src="../../static/images/background.png" alt="">
   </div>
   <div class="row" style="margin-bottom: 200px">
     <h1 class="center-align" style="color: white">Two possibilities</h1>
@@ -88,7 +88,7 @@
       </div>
     </div>
   </div>
-{% include 'footer.html' %}
+{% include 'staticParts/footer.html' %}
 <script type="text/javascript">
 $('.link-how-it-works').click(function(){
        $('html, body').animate({scrollTop:$('.h1-how-it-works').position().top}, 2000);
