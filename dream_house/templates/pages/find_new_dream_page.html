@@ -1,34 +1,7 @@
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamHomePrice</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="../../static/style.css">
-</head>
+{% include 'staticParts/head.html' %}
 <body>
-<script>
-	$(document).ready(function(){
- 		$('.sidenav').sidenav();
- 	});
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
-  $(document).ready(function () {
-    $(".predict_price").click(function() {
-      $.get("/predict_price_form/", function(data) {
-        $("#fill_parameters").html(data);
-      $('select').formSelect();
-      $('html, body').animate({scrollTop:$('#fill_parameters').position().top}, 1000);
-      });
-    });
-  });
-</script>
   {% include 'staticParts/header.html' %}
   <ul id="mobile-nav" class="sidenav" style="margin-right: 25px">
         <li><a href="{%url 'main'%}" onclick="return false" class="link-how-it-works">How it works</a></li>
@@ -40,7 +13,6 @@
             <li><a href="{% url 'logIn' %}">Log In</a> </li>
           {% endif %}
   </ul>
-
   <div class="row" style="margin-top: 100px;">
     <div class="container" style="background-color: #16243c; width: 90%">
       <div class="col s12 m12">

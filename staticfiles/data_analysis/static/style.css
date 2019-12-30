@@ -1,0 +1,24 @@
+.tabs{
+  background-color: black;
+}
+.tabs .tab a {
+  color: orange;
+  background-color: black;
+}
+.tabs .tab a:hover {
+  color:orange;
+  background-color: black;
+}
+
+.tabs .tab a:focus.active {
+  color: white;
+  background-color: black;
+}
+
+.tabs .indicator {
+  background-color: orange;
+}
+
+#stats_switcher{
+  margin-top: 100px;
+}

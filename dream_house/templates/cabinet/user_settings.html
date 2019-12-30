@@ -1,12 +1,3 @@
-<script type="text/javascript">
-      $(document).ready(function () {
-        $(".change_user_settings").click(function() {
-            $.get("/change_user_settings_page/", function(data) {
-                $("#loaded_content").html(data);
-            });
-        });
-    });
-</script>
 <div class="container" id="loaded_content" style="width: 95%; color: black;border-radius: 5px">
   <div class="row" style="margin-left: 50px">
     <div class="col s6">

@@ -1,31 +1,6 @@
 {% load static %}
 {% include 'staticParts/head.html' %}
-<body style="background-image: url('../../static/images/cabinet_back.jpg'); background-size: cover">
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".load_user_info").click(function() {
-            $.get("/user_parameters/", function(data) {
-                $("#loaded_content").html(data);
-            });
-        });
-    });
-    $(document).ready(function () {
-        $(".load_user_subscribes").click(function() {
-            $.get("/user_subscribes/", function(data) {
-                $("#loaded_content").html(data);
-            });
-        });
-    });
-
-    $(document).ready(function () {
-      $(".load_user_settings").click(function() {
-          $.get("/user_settings/", function(data) {
-              $("#loaded_content").html(data);
-          });
-      });
-  });
-  $('[data-toggle="datepicker"]').datepicker();
-</script>
+<body style="background-image: url('{% static 'dream_house/static/images/cabinet_back.jpg' %}'); background-size: cover">
 {% include 'staticParts/header.html' %}
   <div class="row">
     <div class="col s12 m3" style="margin: 0;padding: 0; background-color: #16243c;border-bottom-right-radius: 3px">

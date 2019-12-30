@@ -3,11 +3,6 @@
 <html lang="en">
 {% include 'staticParts/head.html' %}
 <body>
-<script>
-	$(document).ready(function(){
- 		$('.sidenav').sidenav();
- 	});
-</script>
 {% include 'staticParts/header.html' %}
   <div class="row">
     <form class="col s12 login-form" id="log_in" method="post" action="{% url 'UserLogIn' %}">

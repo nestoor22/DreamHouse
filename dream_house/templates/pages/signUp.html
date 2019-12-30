@@ -4,13 +4,6 @@
 <html lang="en">
 {% include 'staticParts/head.html' %}
 <body>
-
-<script>
-	$(document).ready(function(){
- 		$('.sidenav').sidenav();
- 	});
-</script>
-
 {% include 'staticParts/header.html' %}
   <div class="row">
     <form class="col s12" id="register" action="{% url 'createUser' %}" method="post">
