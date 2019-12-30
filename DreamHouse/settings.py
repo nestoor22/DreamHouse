@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dream_house',
+    'data_analysis',
     'social_django',
 ]
 

@@ -17,12 +17,14 @@ from django.contrib.sites.shortcuts import get_current_site
 
 
 def index(request):
-    return render(request, 'pages/index.html', {'onclick_result': 'return false'})
+    return render(request, 'pages/index.html', {'onclick_result': 'return false',
+                                                'title': 'DreamHouse'})
 
 
 def sign_in(request):
     form = UserRegisterForm()
-    return render(request, 'pages/signUp.html', {'form': form})
+    return render(request, 'pages/signUp.html', {'form': form,
+                                                 'title': 'Register   |'})
 
 
 def logout_view(request):
@@ -36,11 +38,13 @@ def log_in_page(request):
     else:
         log_in_form = UserLogInForm()
         return render(request, 'pages/logIn.html', {'form': log_in_form,
-                                                    'onclick_result': 'return true'})
+                                                    'onclick_result': 'return true',
+                                                    'title': 'Register   |'})
 
 
 def user_room(request):
-    return render(request, 'cabinet/cabinet.html', {'onclick_result': 'return true'})
+    return render(request, 'cabinet/cabinet.html', {'onclick_result': 'return true',
+                                                    'title': 'Cabinet'})
 
 
 def user_parameters(request):
