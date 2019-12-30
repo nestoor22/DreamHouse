@@ -19,6 +19,7 @@ from django.contrib import admin
 
 
 urlpatterns = [
+    path('dataAnalytics/', include('data_analysis.urls')),
     path('', include('dream_house.urls')),
     path('admin/', admin.site.urls),
 ]
