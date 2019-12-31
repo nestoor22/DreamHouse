@@ -2,6 +2,7 @@
   background-color: black;
 }
 .tabs .tab a {
+  font-size: xx-large;
   color: orange;
   background-color: black;
 }
@@ -10,7 +11,12 @@
   background-color: black;
 }
 
-.tabs .tab a:focus.active {
+.tabs .tab a.active {
+  color: white;
+  background-color: black;
+}
+
+.tabs .tab a:focus.active{
   color: white;
   background-color: black;
 }
@@ -28,6 +34,18 @@
   text-align: center;
   opacity: 0;
   margin-top: 150px;
+}
+
+.stats_title{
+    color: white;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.stats_value, .price_value, .area_value{
+    color: white;
+    margin-top: 25px;
+    text-align: center;
 }
 
 .graph_container{

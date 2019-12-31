@@ -6,12 +6,35 @@
     <div class="col s12">
       <ul class="tabs">
         <li class="tab col s6"><a class="switch_link" href="#statistic">Statistic</a></li>
-        <li class="tab col s6"><a class="switch_link" href="#graphs" onclick="return false">Graphs</a></li>
+        <li class="tab col s6"><a class="switch_link" href="#graphs">Graphs</a></li>
       </ul>
     </div>
   </div>
   <div id="stats_switcher" class="row">
-    <div id="statistic" class="col s12" style="color: white">Statistic</div>
+    <div id="statistic" class="col s12">
+      <div class="row"><h2 class="stats_title">We analysed</h2></div>
+      <div class="row"><h4 class="stats_value">{{analysed_data_number}}</h4></div>
+      <div class="row">
+        <div class="col s4"><h4 class="stats_title">Minimum price</h4></div>
+        <div class="col s4"><h4 class="stats_title">Maximum price</h4></div>
+        <div class="col s4"><h4 class="stats_title">Average price</h4></div>
+      </div>
+      <div class="row">
+        <div class="col s4"><h4 class="price_value">{{min_price}}</h4></div>
+        <div class="col s4"><h4 class="price_value">{{max_price}}</h4></div>
+        <div class="col s4"><h4 class="price_value">{{average_price}}</h4></div>
+      </div>
+      <div class="row">
+        <div class="col s4"><h4 class="stats_title">Minimum area</h4></div>
+        <div class="col s4"><h4 class="stats_title">Maximum area</h4></div>
+        <div class="col s4"><h4 class="stats_title">Average area</h4></div>
+      </div>
+      <div class="row">
+        <div class="col s4"><h4 class="area_value">300</h4></div>
+        <div class="col s4"><h4 class="area_value">{{max_area}}</h4></div>
+        <div class="col s4"><h4 class="area_value">{{average_area}}</h4></div>
+      </div>
+    </div>
     <div id="graphs" class="col s12">
       <div class="row"><h4 class="graphs_title">Number of buildings per city</h4></div>
       <div class="row">
