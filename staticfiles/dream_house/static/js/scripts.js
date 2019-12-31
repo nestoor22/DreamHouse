@@ -4,6 +4,7 @@ $(document).ready(function(){
 $(document).ready(function(){
  $('select').formSelect();
 });
+
 $(document).ready(function () {
 $(".predict_price").click(function() {
   $.get("/predict_price_form/", function(data) {

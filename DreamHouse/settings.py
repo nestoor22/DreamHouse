@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from dream_house.secret import MY_EMAIL_HOST, MY_EMAIL_HOST_PASSWORD, DB_PASSWORD, DB_USER, SECRET_DJANGO_KEY,\
+from secret import MY_EMAIL_HOST, MY_EMAIL_HOST_PASSWORD, DB_PASSWORD, DB_USER, SECRET_DJANGO_KEY,\
     DB_HOST, DB_NAME, DB_PORT
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)

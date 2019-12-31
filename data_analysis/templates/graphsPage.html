@@ -1,19 +1,47 @@
 {% load static %}
 {% include 'staticParts/data_analisys_pages_head.html' %}
-{% include 'staticParts/header.html' %}
+{% include 'staticParts/data_analysis_header.html' %}
 <body>
   <div id="stats_switcher" class="row">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s6"><a class="active" href="#statistic">Statistic</a></li>
-        <li class="tab col s6"><a href="#graphs">Graphs</a></li>
+        <li class="tab col s6"><a class="switch_link" href="#statistic">Statistic</a></li>
+        <li class="tab col s6"><a class="switch_link" href="#graphs" onclick="return false">Graphs</a></li>
       </ul>
     </div>
   </div>
   <div id="stats_switcher" class="row">
     <div id="statistic" class="col s12" style="color: white">Statistic</div>
-    <div id="graphs" class="col s12">Graphs</div>
+    <div id="graphs" class="col s12">
+      <div class="row"><h4 class="graphs_title">Number of buildings per city</h4></div>
+      <div class="row">
+        <div class="graph_container">
+          <img width="600" height="400"
+             src="{% static 'data_analysis/static/images/city_building_count_histogram.png' %}" alt="" class="graph_photo">
+        </div>
+      </div>
+      <div class="row"><h4 class="graphs_title">Area histogram</h4></div>
+      <div class="row">
+        <div class="graph_container">
+          <img width="600" height="400"
+             src="{% static 'data_analysis/static/images/area_histogram.png' %}" alt="" class="graph_photo">
+        </div>
+      </div>
+    <div class="row"><h4 class="graphs_title">Price scatter plot</h4></div>
+      <div class="row">
+        <div class="graph_container">
+          <img width="600" height="400"
+             src="{% static 'data_analysis/static/images/city_price_scatter.png' %}" alt="" class="graph_photo">
+        </div>
+      </div>
+    <div class="row"><h4 class="graphs_title">Distance-price bar</h4></div>
+      <div class="row">
+        <div class="graph_container">
+          <img width="600" height="400"
+             src="{% static 'data_analysis/static/images/distance_price_bar.png' %}" alt="" class="graph_photo">
+        </div>
+      </div>
+    </div>
   </div>
 </body>
-<script src="{% static 'data_analysis/static/js/jquery.spincrement.min.js' %}"></script>
 <script src="{% static 'data_analysis/static/js/scripts.js' %}"></script>

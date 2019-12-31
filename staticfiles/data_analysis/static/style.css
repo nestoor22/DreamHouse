@@ -22,3 +22,22 @@
 #stats_switcher{
   margin-top: 100px;
 }
+
+.graphs_title{
+  color: white;
+  text-align: center;
+  opacity: 0;
+  margin-top: 150px;
+}
+
+.graph_container{
+  margin-top: 50px;
+  text-align: center;
+}
+
+.graph_photo{
+    max-height:100%;
+    max-width:100%;
+    opacity: 0;
+    text-align: center;
+}
