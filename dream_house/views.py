@@ -17,14 +17,16 @@ from django.contrib.sites.shortcuts import get_current_site
 
 
 def index(request):
-    return render(request, 'pages/index.html', {'onclick_result': 'return false',
-                                                'title': 'DreamHouse'})
+    return render(request, 'pages/index.html',
+                  context={'onclick_result': 'return false', 'title': 'DreamHouse'},
+                  status=200)
 
 
 def sign_in(request):
     form = UserRegisterForm()
-    return render(request, 'pages/signUp.html', {'form': form,
-                                                 'title': 'Register   |'})
+    return render(request, 'pages/signUp.html',
+                  context={'form': form, 'title': 'Register   |'},
+                  status=200)
 
 
 def logout_view(request):
@@ -37,38 +39,39 @@ def log_in_page(request):
         return redirect(user_room)
     else:
         log_in_form = UserLogInForm()
-        return render(request, 'pages/logIn.html', {'form': log_in_form,
-                                                    'onclick_result': 'return true',
-                                                    'title': 'Register   |'})
+        return render(request, 'pages/logIn.html',
+                      context={'form': log_in_form, 'onclick_result': 'return true', 'title': 'Register   |'},
+                      status=200)
 
 
 def user_room(request):
-    return render(request, 'cabinet/cabinet.html', {'onclick_result': 'return true',
-                                                    'title': 'Cabinet'})
+    return render(request, 'cabinet/cabinet.html',
+                  context={'onclick_result': 'return true', 'title': 'Cabinet'},
+                  status=200)
 
 
 def user_parameters(request):
-    return render(request, 'cabinet/profile_info.html')
+    return render(request, 'cabinet/profile_info.html', status=200)
 
 
 def user_subscribes(request):
-    return render(request, 'cabinet/subscribes_page.html')
+    return render(request, 'cabinet/subscribes_page.html', status=200)
 
 
 def user_settings(request):
-    return render(request, 'cabinet/user_settings.html')
+    return render(request, 'cabinet/user_settings.html', status=200)
 
 
 def change_user_setting(request):
-    return render(request, 'cabinet/user_setting_change.html')
+    return render(request, 'cabinet/user_setting_change.html', status=200)
 
 
 def find_new_dream_page(request):
-    return render(request, 'pages/find_new_dream_page.html')
+    return render(request, 'pages/find_new_dream_page.html', status=200)
 
 
 def get_price_prediction_form(request):
-    return render(request, 'prediction_forms/form_for_price_prediction.html')
+    return render(request, 'prediction_forms/form_for_price_prediction.html', status=200)
 
 
 def register_user(request):
@@ -143,7 +146,9 @@ def confirm_email(request):
     })
     send_email_for_activation.delay(user.email, message)
 
-    return render(request, 'cabinet/cabinet.html', {'message': 'Email message is sent'})
+    return render(request, 'cabinet/cabinet.html',
+                  context={'message': 'Email message is sent'},
+                  status=200)
 
 
 def activate_account(request, uidb64, token):
@@ -159,7 +164,9 @@ def activate_account(request, uidb64, token):
         user_profile.save()
         return redirect(index)
     else:
-        return render(request, 'cabinet/cabinet.html', {'onclick_result': 'return true'})
+        return render(request, 'cabinet/cabinet.html',
+                      context={'onclick_result': 'return true'},
+                      status=200)
 
 
 def save_data_for_price_prediction(request):

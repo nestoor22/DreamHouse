@@ -1,4 +1,3 @@
-import logging
 from django.conf import settings
 from dream_house.celery import app
 from django.core.mail import send_mail
