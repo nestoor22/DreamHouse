@@ -1,2 +1,2 @@
 # **DreamHouse**
-_Web-site written in Python/Django/JS_
+_Website for prediction apartments price or area._
